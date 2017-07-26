@@ -23,7 +23,6 @@
     <!--Script vue js-->
     <script type="text/javascript" src="js/vue.js"></script>
     <script type="text/javascript" src="js/vee-validate.js"></script>
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>-->
 </head>
 
 <body>
@@ -80,7 +79,8 @@
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="appAllPosts">
 
                 <div class="accountHeader" v-if="accountActive">
-                    <h2 class="text-center">There are all posts, which you have created early.</h2>
+                    <h2 class="text-center" v-if="postsExist()>0">There are all posts, which you have created early.</h2>
+                    <h2 class="text-center" v-else>There are no posts. You can create new one!</h2>
                     <div class="makePost">
                         <span>You can create an awesome post. Click the button, please!&nbsp;&nbsp;</span>
                         <a class="btn-join btn-foo btn-create-post" href="post.html">Create Post</a>
@@ -326,9 +326,6 @@
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
 
-
-    <!--<script type="text/javascript" src="js/vue.js"></script>-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script async type="text/javascript" src="js/allPostsJS.js"></script>

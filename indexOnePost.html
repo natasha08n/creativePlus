@@ -95,25 +95,15 @@
                     </div>
 
                     <div class="description">
-                        <!--<h2 class="mainTitle">{{ title }}</h2>-->
                         <p class="mainDate">{{ subscribe }}</p>
                         <h3 class="mainSubtitle">{{ subtitle }}</h3>
                         <p class="postText text-justify">{{ text }}</p>
                     </div>
                 </div>
 
-                <div class="createСomment" v-if="isUserLogged()==true" id="appIsLogged">
-                    <h2>Create Comment</h2>
 
-                    <label for="textComment">Comment Text</label>
-                    <br>
-                    <textarea id="textComment" rows="6" maxlength="1000" class="commnet-create-text"></textarea>
-                    <br>
 
-                    <input class="btn-join btn-foo btn-create-comment" type="button" onclick="createNewComment()" value="Add Comment" />
-                </div>
-
-                <!-- вывод комментариев к посту -->
+                <!-- template for show post's comments -->
                 <script type="text/x-template" id="item-template">
                     <div class="comments">
                         <li class="text-justify">
@@ -140,15 +130,25 @@
                 </script>
 
 
-                <!-- the demo root element -->
-                <div class="commentConvert">
-                    <h2>Comments</h2>
-                    <ul id="demo">
-                        <p v-if="treeData.length==0">There are no comments. Be first!</p>
-                        <item class="item" :model="treeData"></item>
+                <!-- root element for template show post's comments -->
+                <div id="commentTree">
+                    <!--form for creation new comment-->
+                    <div class="createСomment" v-if="isUserLogged()==true" id="appIsLogged">
+                        <h2>Create Comment</h2>
+                        <br>
+                        <textarea id="textComment" rows="6" maxlength="1000" class="commnet-create-text"></textarea>
+                        <br>
 
-                    </ul>
+                        <input class="btn-join btn-foo btn-create-comment" type="button" onclick="createNewComment()" value="Add Comment" />
+                    </div>
+                    <div class="commentConvert">
+                        <h2>Comments</h2>
+                        <ul id="commentUl">
+                            <p v-if="treeData.length==0">There are no comments. Be first!</p>
+                            <item class="item" :model="treeData"></item>
 
+                        </ul>
+                    </div>
                 </div>
 
             </div>
@@ -189,7 +189,7 @@
         </div>
     </footer>
 
-    <!--модальное окно для удаления поста-->
+    <!--modal window for deleting a post-->
     <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -211,7 +211,7 @@
         </div>
     </div>
 
-    <!--модальное окно Login-->
+    <!--modal window for login-->
     <div class="modal animated fadeIn loginForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="loginForm">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -254,7 +254,7 @@
         </div>
     </div>
 
-    <!--модальное окно Reg-->
+    <!--modal window for registration-->
     <div class="modal animated fadeIn regForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="registrationForm">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -339,21 +339,20 @@
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="js/moment.min.js"></script>
     <script type="text/javascript" src="js/onePostJS.js"></script>
 
-    <!--вход на сайт-->
+    <!--login-->
     <script type="text/javascript" src="js/validationLog.js"></script>
     <script type="text/javascript" src="js/jquery.md5.js"></script>
 
-    <!--регистрация-->
+    <!--registration-->
     <script type="text/javascript" src="js/validationReg.js"></script>
 
-    <!--кнопка вверх + меняющаяся шапка-->
+    <!--arrow up and navbar script for different users-->
     <script type="text/javascript" src="js/common.js"></script>
 </body>
 

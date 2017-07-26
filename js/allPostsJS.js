@@ -34,7 +34,6 @@ $(document).ready(function () {
         data: {
             show: true,
             items: [], //переменная для вывода всех постов
-            itemsAccount: [], //переменная для вывода постов конкретного пользователя
             accountActive: false,
         },
         methods: {
@@ -53,6 +52,9 @@ $(document).ready(function () {
                     //проверяем принадлежит ли текущий пост авторизированному пользователю для того, чтобы либо показать, либо скрыть кнопки удаления/редактирования
                     return this.authorId == findUserId.id;
                 }
+            },
+            postsExist: function(){
+                return this.items.length;
             }
         }
     });
@@ -69,8 +71,6 @@ $(document).ready(function () {
         if (allPostsFromDB.length > 0) {
             console.log("All", allPostsFromDB.length);
             var userCurrent = JSON.parse(sessionStorage.getItem('userInfo')); //содрежит инфу о текущем юзере
-            var j = 0; //для циклического добавления постов конкретного пользователя
-            var accountPosts = []; //переменная для постов текущего пользователя
             //все посты запоминаем 
             for (var i = 0; i < allPostsFromDB.length; i++) {
                 //обрезание текста для предпросмотра 
@@ -90,20 +90,9 @@ $(document).ready(function () {
                         onePost.commentsCount = findCommentsCount.length;
                     });
                 })(allPostsFromDB[i]);
-
-                //если кто-то авторизирован
-                if (userCurrent != null) {
-                    //если ид авториз. пользователя = userId поста
-                    if (userCurrent.id == allPostsFromDB[i].userId) {
-                        //записываем в массив этот пост
-                        accountPosts[j] = allPostsFromDB[i];
-                        j++;
-                    }
-                }
             }
         }
         appAllPosts.items = allPostsFromDB;
-        appAllPosts.itemsAccount = accountPosts; //добавление в приложение vue инфу о постах текущего юзера
     });
 
 
@@ -153,15 +142,6 @@ $(document).ready(function () {
             }
         }
     });
-
-
-    //популярность тега определяется по количеству встречаемости этого тега в постах
-    //то есть становится популярным тогда, когда сравнивается кол - во встречаемость этого тега во всех постах
-    //1. сначала сколько раз тег встречался
-    //2. сортировка от наибольшей встречаемости до наименьшей
-    //3. обрезается ассоциативный массив(тег, кол - во встречаемости)
-    //4. то есть исходя из сортировки вверху будут макс встречаемость, а внизу наоборот
-    //5. обрезаем первых 10 тегов и их выводим
     
     //выборка популярных тегов
     $.getJSON("http://localhost:3000/postsTags", function (allTags) {
@@ -190,7 +170,7 @@ $(document).ready(function () {
                 return b.frequency - a.frequency;
             });
 
-            //topTags = topTags.slice(0, 10);
+            topTags = topTags.slice(0, 10);
             var j = 10;
             for (var i = 0; i < topTags.length; i++) {
                 if (i < topTags.length - 1) {

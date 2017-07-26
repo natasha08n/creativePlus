@@ -151,16 +151,6 @@
       "datePostUpdate": "1500975258743",
       "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500975246/yvcw9msbeowm9cnb7h4t.jpg",
       "id": 49
-    },
-    {
-      "userId": "35",
-      "title": "rrrrr",
-      "subtitle": "rrrr",
-      "text": "rrfrfrfrfrfr",
-      "datePostCreate": "1500977724448",
-      "datePostUpdate": "1500977724448",
-      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500977719/eaq9japrqvgvvoe9evaw.png",
-      "id": 51
     }
   ],
   "comments": [
@@ -243,22 +233,6 @@
       "text": "I agree with you too)",
       "dateCommentCreate": 1500962779058,
       "id": 21
-    },
-    {
-      "userId": 35,
-      "postId": 51,
-      "Parent": "",
-      "text": "hgj",
-      "dateCommentCreate": 1500977741233,
-      "id": 34
-    },
-    {
-      "userId": 35,
-      "postId": 51,
-      "Parent": "",
-      "text": "jggjg",
-      "dateCommentCreate": 1500977744729,
-      "id": 35
     },
     {
       "userId": 35,
@@ -529,36 +503,6 @@
       "postId": "46",
       "nameTag": "Christ",
       "id": 75
-    },
-    {
-      "postId": "51",
-      "nameTag": "rrr",
-      "id": 91
-    },
-    {
-      "postId": "51",
-      "nameTag": "ffff",
-      "id": 92
-    },
-    {
-      "postId": "51",
-      "nameTag": "hhhh",
-      "id": 93
-    },
-    {
-      "postId": "51",
-      "nameTag": "aaa",
-      "id": 94
-    },
-    {
-      "postId": "51",
-      "nameTag": "bbb",
-      "id": 95
-    },
-    {
-      "postId": "51",
-      "nameTag": "",
-      "id": 96
     }
   ]
 }

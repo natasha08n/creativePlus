@@ -17,6 +17,8 @@ $["postJson"] = function (url, data, callback) {
 
 //id родительского комментария
 var parentCommentId = "";
+//login родительского комментария
+var parentCommentLogin = "";
 
 //функция для создания url с индексом поста
 function getParameterByName(name, url) {
@@ -86,9 +88,6 @@ $(document).ready(function () {
         "November",
         "December",
     ];
-
-    //зпоминаем путь предыдущей страницы
-    var oldPath = "index.html";
 
     //пишем "", чтобы при загрузке страницы не было {{title}} и так далее
     var app = new Vue({
@@ -174,7 +173,6 @@ $(document).ready(function () {
                     comments[i].loginUser = comments[i].user.login;
                     var formattedDate = new Date(parseInt(comments[i].dateCommentCreate));
                     comments[i].dateCommentCreate = formattedDate.getDate() + "." + monthNumber[formattedDate.getMonth()] + "." + formattedDate.getFullYear() + ", " + formattedDate.getHours() + ":" + formattedDate.getMinutes() + ":" + formattedDate.getSeconds();
-                    //console.log("date", comments[i].dateCommentCreate);
                     comments[i].dateCommentCreate = moment(comments[i].dateCommentCreate, "DD.MM.YYYY, h:mm:ss").fromNow();
 
                     comments[i].userAuthor = "";
@@ -213,9 +211,6 @@ $(document).ready(function () {
                     },
                     //меняются каждый раз когда меняется любая переменная входящая сюда
                     computed: {
-                        /* User: function () {
-                             return this.$root.userInfo;
-                         },*/
                         isFolder: function () {
                             return this.model.children &&
                                 this.model.children.length
@@ -228,13 +223,10 @@ $(document).ready(function () {
                             }
                         },
                         addChild: function () {
-                            //сохраняем id комментария в переменную commentId
+                            //сохраняем id комментария в переменную parentCommentId
                             parentCommentId = this.model.value.id;
-
+                            this.userAnswered();
                             $(this).addClass('active');
-                            /*$('html, body').animate({
-                                scrollBottom: $('#appIsLogged').position().bottom - 60
-                            }, 400);*/
                             $('body,html').animate({
                                 scrollTop: $('#appIsLogged').position().top + 70
                                 // Скорость подъема
@@ -255,13 +247,17 @@ $(document).ready(function () {
                                     "text": "This comment has been removed."
                                 }
                             });
+                        },
+                        userAnswered: function(){
+                            //сохраняем login автора комментария в переменную parentCommentLogin
+                            return parentCommentLogin = this.model.value.loginUser;
                         }
                     }
                 })
 
                 // boot up the demo
                 var demo = new Vue({
-                    el: '#demo',
+                    el: '#commentTree',
                     data: {
                         show: true,
                         userInfo: {
@@ -278,7 +274,7 @@ $(document).ready(function () {
                             if (userName != null) {
                                 return userName;
                             } else {
-                                return null;
+                                return { id: 0 };
                             }
                         }
                     }
@@ -306,7 +302,6 @@ var appIsLogged = new Vue({
     }
 });
 
-
 //удаление поста и всех зависимостей к нему
 function deletePost() {
     var findPostId = getParameterByName('postId');
@@ -318,33 +313,6 @@ function deletePost() {
         }
     });
 }
-
-//создание нового комментария
-//function createNewComment() {
-//    var text = $('#textComment').val();
-//
-//    var userCurrentId = JSON.parse(sessionStorage.getItem('userInfo'));
-//    userCurrentId = userCurrentId.id;
-//
-//    var findPostId = +getParameterByName('postId');
-//
-//    var dateComment = new Date();
-//    dateComment = dateComment.valueOf();
-//
-//    $.postJson(
-//        "http://localhost:3000/comments", {
-//            "userId": userCurrentId,
-//            "postId": findPostId,
-//            "Parent": parentCommentId,
-//            "text": text,
-//            "dateCommentCreate": dateComment
-//        },
-//        function (commentNew) {
-//            window.location.reload();
-//        }
-//    );
-//}
-
 
 function createNewComment() {
     var text = $('#textComment').val();
@@ -372,7 +340,4 @@ function createNewComment() {
             }
         );
     }
-
-
-
 }

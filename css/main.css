@@ -487,11 +487,11 @@ div.comments:after {
     clear: both;
 }
 
-ul#demo {
+ul#commentUl {
     padding-left: 0;
 }
 
-ul#demo li {
+ul#commentUl li {
     list-style-type: none;
     cursor: default;
 }
