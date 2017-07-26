@@ -1,0 +1,564 @@
+{
+  "users": [
+    {
+      "login": "busko",
+      "name": "Ulyana",
+      "surname": "Busko",
+      "email": "buskoulya@gmail.com",
+      "hash": "b1a8b38c8b64d3c4e2a49cccb46fe1d2",
+      "photo": "none",
+      "isAdmin": "true",
+      "id": 32
+    },
+    {
+      "login": "horosami",
+      "name": "Horo",
+      "surname": "Sami",
+      "email": "horosami@mail.ru",
+      "hash": "b1a8b38c8b64d3c4e2a49cccb46fe1d2",
+      "photo": "none",
+      "isAdmin": "true",
+      "id": 33
+    },
+    {
+      "login": "newone",
+      "name": "New",
+      "surname": "One",
+      "email": "newone@mail.ru",
+      "hash": "08b1d443ef0ab3677d2af8ef1afb1b28",
+      "photo": "none",
+      "isAdmin": "true",
+      "id": 34
+    },
+    {
+      "login": "natasha",
+      "name": "Natasha",
+      "surname": "Mireyko",
+      "email": "natasha@mail.ru",
+      "hash": "fcea920f7412b5da7be0cf42b8c93759",
+      "photo": "none",
+      "isAdmin": "true",
+      "id": 35
+    }
+  ],
+  "posts": [
+    {
+      "userId": "33",
+      "title": "Here's What It's Like to Live in the Woods, Off the Grid",
+      "subtitle": "Meet a group of people in the mountains of North Carolina surviving on what can be gleaned from their surroundings.",
+      "text": "In 2007, a man and a woman walked into the woods of North Carolina to a small camp. The camp turned into their home, and the home into a community.\nSo goes the story of the early days of Wild Roots, a forest commune in western North Carolina, built on a few founding principles—living freely, not wasting, and constantly learning. On roughly 30 acres, a group of people use what they call earth skills to eat, bathe, and survive. They build what they know how and let the forest teach them what they don’t.\nWild Roots' longest-standing member, a man named Tod, who declines to be identified with a last name, doesn’t have an anti-establishment creed or fear of developed society, just an aversion to it. “We are living off the fat of a ridiculous surplus society,” Tod told photographer Mike Belleme, to explain why the community’s members occasionally “dumpster dive” for supermarket leftovers. Around the camp they also harvest acorns and chestnuts, which they turn into a porridge.\nBelleme first visited the community in 2009 and found about 12 to 14 people glad to welcome him but with a curious lack of shared philosophy. Unlike other communities that are devoted to the environment, or opposed to social norms, Wild Roots had no unified vision, its members saying they’re uncomfortable being put in a box, marginalized, dismissed. What they all had in common, Belleme observed, was simply the inclination to learn.\nIn 2011, Tod, with so much time in the forest, began building himself a bark-roofed cabin made of only materials he could find. He whittled wood pegs, carved oak beams, and stripped the bark off poplar trunks. But it wasn't meant to be. Not long after, Tod abandoned the project. Too much mist in that area invited mold, so he moved on to something new.\nTod originally planned for the group to eat only from the land, but quickly realized that might be naïve. The number of animals in the area had been dropping with the disappearance of native flora. Occasionally, hunters will donate their extra kills to the community in exchange for access to the area. But such bounties don't always yield gourmet meals. During one of Belleme’s trips, the group processed a bear to eat its meat, and then cooked down its brains, tongue, and eyeballs into a stew to put in jars that would last longer. Belleme tasted it.\nLiving in the forest tends to come with downsides. To live without technology can be freeing, but it also is isolating. Once a week, several group members take a truck into a nearby town to use the computers at a public library to email family or read the news. Occasionally they’ll visit a butcher and ask for scraps intended for the trash.\nOver nearly a decade, Wild Roots has grown from a small group into an educational community, says Belleme. It now has a website and welcomes visitors, provided they get in touch first, and don’t arrive sick. People fill their time cooking, blacksmithing, or woodworking.\nNo hierarchy means anyone can learn or teach, anyone can succeed or fail. But there does come a time when the seasons test those who are most committed. When winter arrives, the group thins. Sometimes, the only person left is Tod.",
+      "datePostCreate": "1500959187233",
+      "datePostUpdate": "1500965463777",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500965457/xuzrsnhvdhdymvz5gzlb.jpg",
+      "id": 39
+    },
+    {
+      "userId": "33",
+      "title": "Meet the Man Who Has Lived Alone on This Island for 28 Years",
+      "subtitle": "Mauro Morandi's failing catamaran was carried to Budelli Island nearly three decades ago by chance. He never left.",
+      "text": "Seventy-eight-year-old Mauro Morandi often walks along the rocky shores of Budelli Island and looks out over the disconsolate sea, feeling dwarfed by the phantom forces that tug and twist the tides.\n\n“We think we are giants that can dominate the Earth, but we’re just mosquitos,” Morandi says.\n\nIn 1989 on a stretch of water between Sardinia and Corsica, with a crippled engine and anchor adrift, Morandi’s catamaran was gripped by these same inexorable forces and carried to the shores of Budelli Island. When he learned that its caretaker was retiring from his post in two days, Morandi—long disenchanted with society—sold the catamaran and took his place.\n\nHe has lived alone on the island for the past 28 years.\n\nPicture of Mauro Morandi on Budelli an island near Sardinia, ItalyVIEW IMAGES\nMauro Morandi has lived alone on Budelli Island for 28 years. “What I love the most is the silence,” he says. “The silence in winter when there isn’t a storm and no one is around, but also the summer silence of sunset.”\nBy Gulnaz Khan\nPhotographs by Michele Ardu\nSeventy-eight-year-old Mauro Morandi often walks along the rocky shores of Budelli Island and looks out over the disconsolate sea, feeling dwarfed by the phantom forces that tug and twist the tides.\n\n“We think we are giants that can dominate the Earth, but we’re just mosquitos,” Morandi says.\n\nIn 1989 on a stretch of water between Sardinia and Corsica, with a crippled engine and anchor adrift, Morandi’s catamaran was gripped by these same inexorable forces and carried to the shores of Budelli Island. When he learned that its caretaker was retiring from his post in two days, Morandi—long disenchanted with society—sold the catamaran and took his place.\n\nHe has lived alone on the island for the past 28 years.\n\nSunlight drenches Morandi's porch, where he likes to dine and read during the summer.\nMaddalena Archipelago National Park is comprised of seven islands, and Budelli is considered the most beautiful among them for its Spiaggia Rosa, or Pink Beach. The rose-colored sand derives its unusual hue from microscopic fragments of corals and shells, which have been slowly reduced to powder by the relentless shifting of the waves. In the early nineties, Spiaggia Rosa was dubbed a place of “high natural value” by the Italian government. The beach was closed off to protect its fragile ecosystem, and only certain areas remain accesible to visitors.\n\nThe island rapidly went from hosting thousands of tourists per day to a single heartbeat.\n\nIn 2016, after a three-year legal battle between a New Zealand businessman and the Italian government for ownership of the land, a court ruled that Budelli belonged to Maddalena National Park. The same year, the park challenged Morandi’s right to live on the island—and the public responded. A petition protesting his eviction garnered more than 18,000 signatures, effectively pressuring local politicians to delay his expulsion indefinitely.\n\n“I will never leave,” Morandi says. “I hope to die here and be cremated and have my ashes scattered in the wind.” This, he believes, will be his reunion with the Earth. The Stoics of ancient Greece called this sympatheia, the feeling that the universe is an indivisible, unified living organism endlessly in flux.\n\nThis conviction in our interconnectedness propels Morandi to remain on the island without compensation. Every day he collects wayward plastic that washes up on the beach and tangles with the delicate flora and fauna. Despite his aversion to people, he guards Budelli’s shores with fervor and educates summertime visitors about the ecosystem and how to protect it.\n\n“I’m not a botanist or a biologist,” Morandi says. “Yes, I know names of plants and animals, but my work is much different than this. To be able to care for a plant is a technical task—I try to make people understand [why] the plant needs to live.”\n\nMorandi believes that teaching people how to see beauty will save the world from exploitation more effectively than scientific minutiae. “I would like people to understand that we must try not to look at beauty, but feel beauty with our eyes closed,” he says.\n\nWinters on Budelli are particularly beautiful. Morandi endures long stretches of time—upwards of 20 days—without any human contact. He finds solace in the quiet introspection it affords him, and often sits on the beach with nothing but the operatic sounds of the wind and waves to punctuate the silence.\n\n“I’m sort of in prison here,” he says. “But it’s a prison that I chose for myself.”\n\nMorandi passes the time with creative pursuits. He fashions juniper wood into sculptures, finding faces hidden in their nebulous forms. He reads zealously and meditates on the wisdom of Greek philosophers and literary prodigies. He takes pictures of the island, marveling at how it changes from hour to hour, season to season.\n\nThis is not unusual for people who spend long periods of time alone. Scientists have long posited that solitude generates creativity, as evidenced by scores of artists, poets, and philosophers throughout the ages who produced their greatest works in seclusion from society.\n\nThe benefits of solitude may not be universally beneficial, however. “Solitude can be stressful for members of technologically advanced societies who have been trained to believe that aloneness is to be avoided,” explains Pete Suedfeld in Loneliness: A Sourcebook of Current Theory, Research and Therapy. But there are still cultures around the world in which solitary life remains a venerated tradition. Buddhist monasticism, for example, encourages spiritual devotion and scholarly pursuit above seeking bodily pleasures.\n\nBut amidst rapid globalization, humans' ability to experience true solitude is perhaps a thing of the past. In response to increasing development of the region, an internet company established a Wi-Fi connection on Budelli, connecting Morandi and his beloved piece of paradise to the world through social media. Embracing this new form of communication is his concession on behalf of a larger purpose—to facilitate a bond between people and nature by exposing them to its beauty. A bond Morandi hopes will motivate people to care for the withering planet.\n\n“Love is an absolute consequence of beauty and vice versa,” Morandi says. “When you love a person deeply you see him or her as beautiful, but not because you see them as physically beautiful … you empathize with them, you’ve become a part of her and she’s become a part of you. It’s the same thing with nature.”",
+      "datePostCreate": "1500959543585",
+      "datePostUpdate": "1500965511593",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500965508/dzvyt9kirutthatvyjbh.jpg",
+      "id": 40
+    },
+    {
+      "userId": "33",
+      "title": "7 Useful Apps for Off the Grid Adventures",
+      "subtitle": "These wifi-free apps were designed with remote areas in mind.",
+      "text": "Though purists may say nothing can replace a printed topographic map, the world’s leading smartphone apps are getting close. Technology is making it easier than ever to get lost in an adventure without getting lost in the wilderness, and there are plenty of ways to enjoy these benefits even when you’ve ventured to signal-free zones. Try one of these useful off-line apps on your next remote mountain trek, camping trip, or deep-sea dive to stay connected and informed without an internet connection. \nIf you prefer traveling solo in the wilderness, download the Cairn app for an extra layer of safety. Before you enter the backcountry, download maps for off-line use and pinpoint your location to access available cellular data points in your area. By clicking on the blue icons, you can discover which service provider works where. Set a designated check-in reminder with the app’s safety notification feature. If this goes unanswered, Cairn will alert your emergency contact with recommendations on how to contact search and rescue. \nPlot your trail and gain access to topographic maps with Gaia GPS, a membership-based app that showcases the newest trails and backcountry routes. Select from a scale of memberships beginning at $9.99, which grants you unlimited download access to save your route map for off-line use. Track your distance, speed, and pace while out of cellular range, and drop markers to ensure you’re always going in the right direction. After your trip is complete, you can share your route and trail notes with friends. \nIf you’ve ever been hiking and wondered which peaks you’re passing, download PeakFinder Earth for your next trip into the mountains. The app functions completely off-line, accessing your location to reveal names and black-and-white renderings of surrounding peaks. Tap the peak’s name to discover elevation levels, and use the flyover feature to glide over ranges and discover peaks in the distance. The app also includes a digital telescope to view less-prominent ranges in your area. \nIf you’re an avid scuba diver, you know the importance of keeping a logbook to track measures like dive duration, current conditions, and tank size and pressure. Take this concept to the digital age with DiveMate, an app that allows you to quickly and easily log each dive, as well as save online maps for off-line use while traveling by boat or going off the grid. Once you’re back on dry land, upload pictures, videos, and notes to share with friends. To transfer dive data, connect your dive computer to your PC or purchase the DiveMate Fusion USB to gain instant access to dive data on your smartphone. \nIf you’re an avid explorer of U.S. national parks, the Chimani suite of apps are your perfect companions. Download the main national park app or select a park-specific app before your visit. Use the available national park maps and detailed guides to digitally explore trails, historic and natural points of interest, and useful amenities like bathrooms and rest stops. There’s no need for a data signal, as the interactive maps work off-line, and you can even navigate your path while on the trail. \nTo unlock almost everything that’s been mapped in the last one hundred years, download ROAM by onXmaps and purchase the $9.99 one-year membership, so you can build the map you want by selecting the region and features. Whether you plan to venture through unchartered wilderness areas, national forests, or trails and streams, the app connects with your smartphone’s built-in GPS to track you when you’re off-line, making it perfect for backpacking, day hikes, or trail running.",
+      "datePostCreate": "1500959990794",
+      "datePostUpdate": "1500965561505",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500965557/oxqagc4id1evctrcd6lj.jpg",
+      "id": 41
+    },
+    {
+      "userId": "33",
+      "title": "The Next Moon Landing is Near",
+      "subtitle": "About This Month's Cover Story",
+      "text": "Nearly 50 years after the end of the first major race to the moon, in which the United States and the Soviet Union spent fantastic amounts of public money in a bid to land the first humans on the lunar surface, an intriguing new race to our nearest neighbor in space is unfolding.\n\nIt largely involves private capital and dramatically lower costs, and, for now, is focused on a cash prize: the $20 million Google Lunar XPrize (or GLXP), which will be awarded to the first team of scientists, engineers, entrepreneurs and dreamers who manage to land a traveling vehicle on the moon and then transmit high-quality imagery back to Earth.\n\nThe competition is modeled after the great innovation-spurring prize races of the early years of aviation, most notably the Orteig Prize, which Charles Lindbergh won in 1927 when he flew the Spirit of St. Louis nonstop from New York to Paris.\n\nLike that contest, the competition for the Lunar XPrize involves national prestige. Teams from Israel, Japan, the U.S., India and a multinational group, are vying for the honor. The prevailing team almost surely will spend much more to win the contest than it will get in prize money, but the teams hope that publicity and prestige will make their investment pay off.\n\nThis new sprint to space poses a question that would have been laughable in the Cold War era: Can someone actually make money venturing out into the great beyond? To a wide range of visionaries, the answer is an enthusiastic yes.\n\nIn the August issue of National Geographic magazine, we take you inside the new space race, show the different ways in which the teams hope to conquer the moon, and hear why some people think the world's first trillionaire could be a space entrepreneur.",
+      "datePostCreate": "1500960980650",
+      "datePostUpdate": "1500965616388",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500965610/d2ovvove2cxlarmgvzg3.jpg",
+      "id": 42
+    },
+    {
+      "userId": "32",
+      "title": "What Cowboys Looked Like Nearly 100 Years Ago",
+      "subtitle": "On National Day of the Cowboy, see some of the first color photos of cowboys in the American west.",
+      "text": "On July 22, states from Texas to Idaho will celebrate National Day of the Cowboy, hailing one of the most recognizable and iconic figures in North America.\n\nA total of 12 states have passed statewide measures officially dedicating the day to the celebration of cowboy culture with activities like live country music, frontier-style games, and food served from a chuck wagon.\n\nThe photos above show some of the first color photos of cowboys in the U.S. Many were shot on autochrome, the first method of color photography. The technique used potato starch layered on glass to create color images that resembled paintings.\n\nThe cowboys pictured look exactly like you thought they would—decked out in chaps, cowboy hats, and thick leather boots.\n\nCowboys have become emblazoned in popular consciousness as a symbol of the American West, but their origins didn’t actually begin with settlers from the U.S.\n\nWhen the Spanish arrived in what is now Mexico, they established ranches which, by the early 18th century, had spread into what is now Texas, Arizona, and New Mexico. In order to maintain these ranches, the Spanish employed Native Americans as vaqueros (the Spanish word for cowboys.)\n\nAfter the Mexican-American War ended in 1848, settlers from the eastern U.S. flooded into the southwest—previously Mexican territory, now part of the continental U.S.—and ranching culture ceased to be uniquely Hispanic. Cattle drives to herd thousands of bovines from the Southwest to the Northwest quickly spread the lasso-throwing, boot-wearing culture to other American states.\n\nToday there may not be many vaqueros driving large herds, but the cowboy still remains a uniquely American icon.",
+      "datePostCreate": "1500961524409",
+      "datePostUpdate": "1500965677914",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500965675/zj9xpmqyujgm4xtg50rw.jpg",
+      "id": 43
+    },
+    {
+      "userId": "32",
+      "title": "7 Alien 'Earths' May Be Swapping Life via Meteorites",
+      "subtitle": "Tiny life-forms can move easily between these recently described planets, according to a study of the travel times between worlds.",
+      "text": "The discovery of alien life would be revolutionary. But what if we uncovered it on two—or even seven—planets all orbiting the same star?\n\nThat’s the tantalizing possibility offered by the cosmic grouping called TRAPPIST-1, where seven Earth-size worlds circle a star roughly 39 light-years away. According to a new study, those planets are packed so tightly around their stellar host that the seeds of life could be hopping between them with ease.\n\nThe study, conducted by Manasvi Lingam and Abraham Loeb of the Harvard-Smithsonian Center for Astrophysics, is based on a theory known as panspermia, which in turn is based on the fact that planetary debris can be swapped between the worlds in our solar system. This is especially true for neighboring rocky planets—for instance, asteroid strikes have sent fragments of Mars crash-landing onto Earth.\n\nPanspermia takes this a step further and suggests that life could catch a ride on that debris, hitchhiking from one planet to the next. It might sound wild, but recent research shows that some extreme forms of life can survive conditions akin to an interplanetary journey. Some scientists even argue that the seeds of life on Earth could have come from Mars.\n\nIn the TRAPPIST-1 system, all seven planets are nestled within a region that’s more than 20 times smaller than the distance between Mars and Earth. Such close proximity raises the tantalizing possibility that panspermia could take place in this system with ease.",
+      "datePostCreate": "1500961659507",
+      "datePostUpdate": "1500965718319",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500965715/ubuwuz1l8tayvocgedwd.jpg",
+      "id": 44
+    },
+    {
+      "userId": "32",
+      "title": "Cecil the Lion's Son Xanda Also Killed by Trophy Hunter",
+      "subtitle": "The six-year-old lion was shot near where his famous father died in Zimbabwe.",
+      "text": "Picture of a lion in Hwange National ParkVIEW IMAGES\nXanda, pictured, was killed in much the same way as his father Cecil. \nPHOTOGRAPH BY BERT DU PLESSIS\nBy Casey Smith\nPUBLISHED JULY 20, 2017\nTwo years to the month after Cecil the Lion was killed in a controversial hunt in Zimbabwe, one of his sons has also been shot and killed in a legal trophy hunt, ringing similarities to the death of his father.\n\nThe six-year-old lion cub, Xanda, was shot by a trophy hunter outside of the Hwange National Park in Zimbabwe—close to the area where Cecil was killed with a bow and arrow in 2015—the Telegraph first reported.\n\nAndrew Loveridge, a zoology researcher at Oxford University, has not responded to a request for comment but he told the Telegraph that Xanda was wearing a collar at the time of his death, which allowed researchers to monitor his movements in the area.\n\n\"I fitted [the collar] last October,” Loveridge told the paper. “It was monitored almost daily and we were aware that Xanda and his pride was spending a lot of time out of the park in the last six months, but there is not much we can do about that.”\n\nZimbabwean professional hunter Richard Cooke reportedly saw the collar after killing Xanda, and he later returned it to the researchers. Because the lion was over the age of six and outside the park’s boundaries, the kill was legal in the country.\n\nXanda's death raises fresh questions about the value of trophy hunting, says Luke Dollar, the conservation biologist who heads National Geographic's Big Cats Initiative. \"Often times we have concerns with this—is the value of that animal who was shot one time equal to the economic benefit that that animal’s sustained existence and draw for tourism would have been over its life to the local and national economies?\" Dollar asks. \"That’s an ongoing debate between hunters and conservationists.\"\n\nAlthough it's uncertain whether Xanda was an alpha male, Dollar said the lion's death could be even more tragic for his pride if he was—other lions could die if a new alpha male tried to take over.\n\n“Regardless, it’s obviously very sad to hear that this lion was lost,” Dollar said. “From an ecosystem perspective, lions and every top predator play a huge role in maintaining the long-term balance of nature in its natural state without constant intervention and management, so that's something important for people to remember.”\n\nCecil the lion's killing on July 1, 2015 in Zimbabwe sparked intense international outrage—what many call the biggest response to a wildlife story in history. A well-known lion that was part of a groundbreaking study led by Oxford University, Cecil was shot by Minnesota dentist Walter James Palmer, then 55. In response to an outpouring of anger online and in-person protests, Palmer went into hiding for weeks, temporarily closing his dental practice.\n\nZimbabwe temporarily suspended legal lion hunting for 10 days. And although there was public pressure to charge Palmer in Zimbabwe he never faced legal action. He maintained that he had purchased the legal permits to kill a lion in Zimbabwe and said he did not know the individual was famous or part of a study (though researchers argued Cecil's tracking collar should have been hard to miss). Charges were also dropped against the local hunter who organized the trip.",
+      "datePostCreate": "1500961821809",
+      "datePostUpdate": "1500965780405",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500965777/zmqmkcyhiejxgwnxo0us.jpg",
+      "id": 45
+    },
+    {
+      "userId": "34",
+      "title": "Meet Five Men Who All Think They’re the Messiah",
+      "subtitle": "These men say they’re the Second Coming of Jesus Christ. Their disciples agree.",
+      "text": "The Bible’s penultimate verse, prophesying the return of Jesus Christ, has always fascinated me. When is “soon”? And who is “I”? For the past three years I’ve followed seven men who claim to be the Second Coming of Christ (five are shown here). By immersing myself in their revelations and spending time with their disciples, I’ve tried to produce images that illustrate the human longing for faith, meaning, and salvation.\n\nReligion is somewhat mysterious to me, probably because I wasn’t raised with it in Norway. But I’ve always enjoyed reading Scripture, and over the past decade or so my interest in it has grown. I’ve found myself coming back, again and again, to that mysterious line—a promise that Christianity has been waiting nearly 2,000 years to be fulfilled.\n\nIf Christ were to come back to complete his work today, I’ve thought, what would he think of the world we’ve created? And what would we think of him? With these thoughts tumbling around in my head, I decided to start looking for messiahs.\n\nI found them the way you find everything these days: through Google. You might think there’d be more people who claim to be Christ. But while many can be called prophets, gurus, or spiritual leaders, only a few meet what I consider the minimum criteria: consistent revelations, years of scriptural records, a following of disciples.\n\nEach of these men is unique. The communities that surround them are too. For most people, belief in a higher power is an abstract thing. But for these disciples—most of whom seem highly intelligent; none appear to be brainwashed or crazy—it’s tangible. They can touch their belief.\n\nWherever I went, I tried to keep an open mind and submerge myself in their reality. One thing I was struck by is how extremely consistent several of these messiahs are. The New Testament is full of contradictions, but each of these men has a narrative that sort of reconciles those inconsistencies. In some ways they’re more coherent than the Scripture we have.\n\nI know a lot of people will dismiss these men as fakers or lunatics. But I’ve always thought that a fundamental part of the Abrahamic religions—Judaism, Christianity, Islam—involves the coming of a messiah. Those faiths may disagree about identity and timing, but I think they agree on the basic premise. So if one accepts that, why couldn’t it be one of these guys?\n\nFor me this project has been more about asking questions than finding answers. I hope it will get people to do the same—to think about belief and who has the power to define it.",
+      "datePostCreate": "1500962271209",
+      "datePostUpdate": "1500975288942",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500449234/oek3puuce6nt0i3xsj2h.png",
+      "id": 46
+    },
+    {
+      "userId": "34",
+      "title": "Spoken with poetry",
+      "subtitle": "Poetry",
+      "text": "English is an evolving field. The mediums in which it manifests itself have grown numerously and have shown different trends of popularity. In the times of Shakespeare, older prose and plays were very modern, whereas today novels and spoken word poetry seem more prevalent. That might mostly stem from the fact that we live in the Information Age and that expression is the new frontier. Everyone has the ability to create and put their ideas out there into the world. One very modern way of doing so, which has found its way into popular media, is spoken word.",
+      "datePostCreate": "1500974958823",
+      "datePostUpdate": "1500974958823",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500974947/lpdgnxfb2jimxf0kgq7k.jpg",
+      "id": 47
+    },
+    {
+      "userId": "34",
+      "title": "Belgium far more transparant than Luxembourg and the Netherlands",
+      "subtitle": "Luxembourg",
+      "text": "In April I visited Luxembourg to discuss progress against tax avoidance. Believe it or not, Luxleaks has triggered some serious changes in the country, and there’s even the start of a real public debate with the media covering various perspectives.\n\nThe biggest change, of course, was a complete overhaul of the tax ruling practice. Within two months after the first Luxleaks publications, Luxembourg passed new legislation to reform it. The new law provides for publication of advance tax agreements, in summarized and anonymous form, in the annual report of the tax administration:\nImplementation took quite a bit longer. The report for the year 2015 did not yet include info about tax rulings. The first data are in the 2016 report, which has recently been published, and the level of public transparency is rather disappointing. The report mainly describes developments in the total number of rulings.",
+      "datePostCreate": "1500975142473",
+      "datePostUpdate": "1500975142473",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500975130/xjaltoradrcqhuuvt1r1.jpg",
+      "id": 48
+    },
+    {
+      "userId": "34",
+      "title": "Membership for Individuals",
+      "subtitle": "Membership for Individuals",
+      "text": "Members of the Early English Text Society receive each year the editions published by the Society in the Ordinary Series for that year. Usually, there are two publications each year, though not always so. Individual members of the Society, but not institutions, who would prefer not to receive the new publications may instead substitute any past volumes from the Society's list which are currently in print up to the value of £60.00 or $120, depending which currency one has paid the subscription in. (Each new year's subscription accrues a new credit against the back-list.) Members also receive a copy of the Society's brief annual report and the Society's accounts. Very occasionally, extra books are published in the Supplementary Series; those volumes are not sent to members in return for their annual subscription but they are available to members at a reduced pre-publication price; a notice about each volume is sent to members in advance of publication.\n\nThe subscription to the Society is £30.00 or US$60.00. Individual members can pay subscriptions in three ways: by PayPal, from links on this webpage, by credit or debit card, or by a cheque in pounds sterling made out to 'The Early English Text Society', and sent to the Membership Secretary. Please use the PayPal buttons and the forms below.\n\nPayment by PayPal\nThe easiest way for individuals to pay their subscription is by PayPal using the buttons on this page. You can sign up to pay a subscription annually or just this once. PayPal will allow you to pay using your credit or debit card, or to pay with your own PayPal account, should you have one. PayPal gives you the opportunity to specify a separate 'dispatch address', if you would like your books posted to an address different from that of your registered credit card or PayPal account. Please do remember to specify which address to use.\n\nIf you wish to pay a recurring annual subscription on the same date each year, please use one of these two buttons, in pounds sterling or in US dollars. This payment will continue annually until you cancel it.",
+      "datePostCreate": "1500975258743",
+      "datePostUpdate": "1500975258743",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500975246/yvcw9msbeowm9cnb7h4t.jpg",
+      "id": 49
+    },
+    {
+      "userId": "35",
+      "title": "rrrrr",
+      "subtitle": "rrrr",
+      "text": "rrfrfrfrfrfr",
+      "datePostCreate": "1500977724448",
+      "datePostUpdate": "1500977724448",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500977719/eaq9japrqvgvvoe9evaw.png",
+      "id": 51
+    }
+  ],
+  "comments": [
+    {
+      "userId": 33,
+      "postId": 39,
+      "Parent": "",
+      "text": "This story struck me to the core!",
+      "dateCommentCreate": 1500959219857,
+      "id": 12
+    },
+    {
+      "userId": 33,
+      "postId": 42,
+      "Parent": "",
+      "text": "How do you think how much is left before another launch to the moon?",
+      "dateCommentCreate": 1500961167010,
+      "id": 13
+    },
+    {
+      "userId": 32,
+      "postId": 39,
+      "Parent": "",
+      "text": "So exciting!",
+      "dateCommentCreate": 1500961900043,
+      "id": 14
+    },
+    {
+      "userId": 32,
+      "postId": 39,
+      "Parent": 12,
+      "text": "I agree with you :)",
+      "dateCommentCreate": 1500961922578,
+      "id": 15
+    },
+    {
+      "userId": 32,
+      "postId": 39,
+      "Parent": "",
+      "text": "This comment has been removed.",
+      "dateCommentCreate": 1500961950609,
+      "id": 16
+    },
+    {
+      "userId": 32,
+      "postId": 42,
+      "Parent": 13,
+      "text": "I hope that very soon!!!",
+      "dateCommentCreate": 1500962005330,
+      "id": 17
+    },
+    {
+      "userId": 32,
+      "postId": 44,
+      "Parent": "",
+      "text": "I love stories about UFOs :)",
+      "dateCommentCreate": 1500962039113,
+      "id": 18
+    },
+    {
+      "userId": 33,
+      "postId": 46,
+      "Parent": "",
+      "text": "So I believed it.... Nobody knows when the second advent will be.",
+      "dateCommentCreate": 1500962561554,
+      "id": 19
+    },
+    {
+      "userId": 34,
+      "postId": 46,
+      "Parent": 19,
+      "text": "And what's so surprising? There are so many people in the world who issue such things.",
+      "dateCommentCreate": 1500962615586,
+      "id": 20
+    },
+    {
+      "userId": 34,
+      "postId": 39,
+      "Parent": 15,
+      "text": "I agree with you too)",
+      "dateCommentCreate": 1500962779058,
+      "id": 21
+    },
+    {
+      "userId": 35,
+      "postId": 51,
+      "Parent": "",
+      "text": "hgj",
+      "dateCommentCreate": 1500977741233,
+      "id": 34
+    },
+    {
+      "userId": 35,
+      "postId": 51,
+      "Parent": "",
+      "text": "jggjg",
+      "dateCommentCreate": 1500977744729,
+      "id": 35
+    },
+    {
+      "userId": 35,
+      "postId": 39,
+      "Parent": "",
+      "text": "norm))",
+      "dateCommentCreate": 1500981256420,
+      "id": 36
+    }
+  ],
+  "postsTags": [
+    {
+      "postId": "46",
+      "nameTag": "Jesus",
+      "id": 9
+    },
+    {
+      "postId": "46",
+      "nameTag": "Christ",
+      "id": 10
+    },
+    {
+      "postId": "39",
+      "nameTag": "live",
+      "id": 11
+    },
+    {
+      "postId": "39",
+      "nameTag": "wood",
+      "id": 12
+    },
+    {
+      "postId": "39",
+      "nameTag": "man",
+      "id": 15
+    },
+    {
+      "postId": "39",
+      "nameTag": "carolina",
+      "id": 16
+    },
+    {
+      "postId": "39",
+      "nameTag": "live",
+      "id": 17
+    },
+    {
+      "postId": "39",
+      "nameTag": "wood",
+      "id": 18
+    },
+    {
+      "postId": "39",
+      "nameTag": "north",
+      "id": 19
+    },
+    {
+      "postId": "39",
+      "nameTag": "carolina",
+      "id": 20
+    },
+    {
+      "postId": "39",
+      "nameTag": "man",
+      "id": 21
+    },
+    {
+      "postId": "39",
+      "nameTag": "people",
+      "id": 22
+    },
+    {
+      "postId": "40",
+      "nameTag": "old",
+      "id": 28
+    },
+    {
+      "postId": "40",
+      "nameTag": "man",
+      "id": 29
+    },
+    {
+      "postId": "40",
+      "nameTag": "alone",
+      "id": 30
+    },
+    {
+      "postId": "40",
+      "nameTag": "catamaran ",
+      "id": 31
+    },
+    {
+      "postId": "40",
+      "nameTag": "live",
+      "id": 32
+    },
+    {
+      "postId": "41",
+      "nameTag": "apps",
+      "id": 36
+    },
+    {
+      "postId": "41",
+      "nameTag": "adventures",
+      "id": 37
+    },
+    {
+      "postId": "41",
+      "nameTag": "mind",
+      "id": 38
+    },
+    {
+      "postId": "42",
+      "nameTag": "landing",
+      "id": 40
+    },
+    {
+      "postId": "42",
+      "nameTag": "story",
+      "id": 41
+    },
+    {
+      "postId": "42",
+      "nameTag": "near",
+      "id": 42
+    },
+    {
+      "postId": "42",
+      "nameTag": "moon",
+      "id": 43
+    },
+    {
+      "postId": "42",
+      "nameTag": "landing",
+      "id": 44
+    },
+    {
+      "postId": "42",
+      "nameTag": "near",
+      "id": 45
+    },
+    {
+      "postId": "43",
+      "nameTag": "cowboys",
+      "id": 46
+    },
+    {
+      "postId": "43",
+      "nameTag": "west",
+      "id": 47
+    },
+    {
+      "postId": "43",
+      "nameTag": "Texas",
+      "id": 48
+    },
+    {
+      "postId": "44",
+      "nameTag": "alien",
+      "id": 49
+    },
+    {
+      "postId": "44",
+      "nameTag": "meteorite",
+      "id": 50
+    },
+    {
+      "postId": "44",
+      "nameTag": "planets",
+      "id": 51
+    },
+    {
+      "postId": "44",
+      "nameTag": "star",
+      "id": 52
+    },
+    {
+      "postId": "45",
+      "nameTag": "hunter",
+      "id": 57
+    },
+    {
+      "postId": "45",
+      "nameTag": "killed",
+      "id": 58
+    },
+    {
+      "postId": "45",
+      "nameTag": "lion",
+      "id": 59
+    },
+    {
+      "postId": "45",
+      "nameTag": "old",
+      "id": 60
+    },
+    {
+      "postId": "45",
+      "nameTag": "famous",
+      "id": 61
+    },
+    {
+      "postId": "45",
+      "nameTag": "Zimbabwe",
+      "id": 62
+    },
+    {
+      "postId": "45",
+      "nameTag": "hunter",
+      "id": 63
+    },
+    {
+      "postId": "45",
+      "nameTag": "killed",
+      "id": 64
+    },
+    {
+      "postId": 47,
+      "nameTag": "poetry",
+      "id": 65
+    },
+    {
+      "postId": "48",
+      "nameTag": "april",
+      "id": 66
+    },
+    {
+      "postId": "48",
+      "nameTag": "people",
+      "id": 67
+    },
+    {
+      "postId": "49",
+      "nameTag": "membership",
+      "id": 68
+    },
+    {
+      "postId": "49",
+      "nameTag": "subscription",
+      "id": 69
+    },
+    {
+      "postId": "49",
+      "nameTag": "people",
+      "id": 70
+    },
+    {
+      "postId": "46",
+      "nameTag": "people",
+      "id": 71
+    },
+    {
+      "postId": "46",
+      "nameTag": "Messiah",
+      "id": 72
+    },
+    {
+      "postId": "46",
+      "nameTag": "men",
+      "id": 73
+    },
+    {
+      "postId": "46",
+      "nameTag": "Jesus",
+      "id": 74
+    },
+    {
+      "postId": "46",
+      "nameTag": "Christ",
+      "id": 75
+    },
+    {
+      "postId": "51",
+      "nameTag": "rrr",
+      "id": 91
+    },
+    {
+      "postId": "51",
+      "nameTag": "ffff",
+      "id": 92
+    },
+    {
+      "postId": "51",
+      "nameTag": "hhhh",
+      "id": 93
+    },
+    {
+      "postId": "51",
+      "nameTag": "aaa",
+      "id": 94
+    },
+    {
+      "postId": "51",
+      "nameTag": "bbb",
+      "id": 95
+    },
+    {
+      "postId": "51",
+      "nameTag": "",
+      "id": 96
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link rel="shortcut icon" href="img/heart.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="logo" class="navbar-brand" href="index.html">Creative<sup>+</sup></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Toutorials</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Other</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+                <div id="appMenu">
+                    <ul v-if="userInfo==null" class="nav navbar-nav navbar-right">
+                        <li><a class="hidden-sm" id="username" href="#" data-toggle="modal" data-target=".loginForm">Sign In</a></li>
+                        <li><a class="hidden-sm" href="#" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
+                    </ul>
+                    <ul v-else class="nav navbar-nav navbar-right new-nav">
+                        <li><a class="hidden-sm" id="username" :href="'index.html?userId='+userInfo.id">Hello, {{userInfo.login}}!</a></li>
+                        <li><a class="hidden-sm" v-on:click="logout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header"></div>
+
+    <ul class="leftSocial">
+        <li class="socialTop"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+        <li class="socialBottom"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    </ul>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="editPost" id="app">
+                    <h2 v-if="editOrCreate()==true">Edit Post</h2>
+                    <h2 v-else>Create Post</h2>
+                    <label for="title">Post Title<span>*</span></label>
+                    <br>
+                    <input id="title" type="text" v-bind:value="title" />
+                    <br>
+
+                    <label for="subtitle">Post Subtitle</label>
+                    <br>
+                    <input id="subtitle" type="text" v-bind:value="subtitle" />
+                    <br>
+
+                    <label for="tags">Tags</label>
+                    <br>
+                    <input id="tags" type="text" v-bind:value="tags" />
+                    <p><em>Please enter comma separated list of tags</em></p>
+
+                    <label for="text">Post Text</label>
+                    <br>
+                    <textarea id="text" rows="6" maxlength="10000" v-bind:value="text"></textarea>
+                    <br>
+
+                    <div class="card">
+                        <div v-if="editOrCreate()==true">
+                            <label>You can change image for your awesome post!</label>
+                            <img v-bind:src="photo" id="img-preview" class="select-img img-responsive" />
+                        </div>
+                        <div v-else>
+                            <p><em>You should select image for your awesome post!</em></p>
+                            <img src="img/post-it.png" id="img-preview" class="select-img img-responsive" />
+                        </div>
+                        <br>
+                        <label class="file-upload-container" for="file-upload">
+                        <input id="file-upload" type="file" style="display:none;">Select an Image</label>
+                    </div>
+
+                    <input v-if="editOrCreate()==true" class="btn-join btn-foo btn-edit-post" type="button" onclick="editPost()" value="Save changes" />
+                    <input v-else class="btn-join btn-foo btn-edit-post" type="button" onclick="makePost()" value="Create" />
+                    <input class="btn-join" type="button" value="Cancel" v-on:click="redirect()" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <p>Quisque turpis lorem, vehicula eget rhoncus vel, ultricies ac mauris. Morbi lectus velit, tincidunt congue pharetra eu, varius nec libero. Vivamus justo risus, dignissim ac vestibulum eget, egestas rutrum magna. Etiam malesuada nisi et nisl volutpat tristique.</p>
+                    <ul class="socialLinks">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <br>
+                    <small>Copyright 2012 Footer here</small>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
+                    <div class="join-to-us">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-envelope btn-icon"></i>
+                                    </div>
+                                    <input type="text" class="form-control join" placeholder="Join Our Newsletter Here">
+                                    <div class="input-group-addon btn-join-block">
+                                        <input type="submit" class="btn-join btn-foo" value="Join">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--модальное окно Login-->
+    <div class="modal animated fadeIn loginForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="loginForm">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="appLog">
+                        <form @submit.prevent="validateBeforeSubmit">
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="email" name="email" v-model="email" v-validate="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" placeholder="Email">
+                    <i v-show="errors.has('email')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="password" name="password" v-validate="'required|min:6'" :class="{'input': true, 'is-danger': errors.has('password') }" type="password" placeholder="Password">
+                    <i v-show="errors.has('password')" class="fa fa-warning"></i>
+                    <span v-show="errors.has('password')" class="help is-danger login-err">{{ errors.first('password') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <p class="control">
+                                    <button class="btn-join" type="submit">Submit</button>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--модальное окно Reg-->
+    <div class="modal animated fadeIn regForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="registrationForm">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="appReg">
+                        <form @submit.prevent="validateBeforeSubmit">
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="loginReg" name="login" v-model="login" v-validate="'required|alpha'" :class="{'input': true, 'is-danger': errors.has('login') }" type="text" placeholder="Login"/>
+                    <i v-show="errors.has('login')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('login')" class="help is-danger">{{ errors.first('login') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="emailReg" name="email" v-model="email" v-validate="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" placeholder="Email">
+                    <i v-show="errors.has('email')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12" for="name">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="nameReg" name="name" v-model="name" v-validate="'required|alpha'" :class="{'input': true, 'is-danger': errors.has('name') }" type="text" placeholder="Name">
+                    <i v-show="errors.has('name')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="surnameReg" name="surname" v-model="surname" v-validate="'required|alpha'" :class="{'input': true, 'is-danger': errors.has('surname') }" type="text" placeholder="Surname"/>
+                    <i v-show="errors.has('surname')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('surname')" class="help is-danger">{{ errors.first('surname') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="passwordReg" name="password" v-validate="'required|min:6'" :class="{'input': true, 'is-danger': errors.has('password') }" type="password" placeholder="Password">
+                    <i v-show="errors.has('password')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="passwordRegConfirm" name="password" v-validate="'required|min:6'" :class="{'input': true, 'is-danger': errors.has('password') }" type="password" placeholder="Confirm password">
+                    <i v-show="errors.has('password')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+                            <div class="column is-12">
+                                <p class="control">
+                                    <button class="btn-join" type="submit">Submit</button>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/onePostJS.js"></script>
+
+    <!--для редактирования поста-->
+    <script src="js/editPost.js"></script>
+
+    <!--для добавления поста-->
+    <script src="js/axios.min.js"></script>
+    <script src="js/js.js"></script>
+    <!--для редактирования поста-->
+    <script src="js/editPost.js"></script>
+    <script src="js/appSelectImage.js"></script>
+
+    <!--кнопка вверх + меняющаяся шапка-->
+    <script type="text/javascript" src="js/common.js"></script>
+</body>
+
+</html>

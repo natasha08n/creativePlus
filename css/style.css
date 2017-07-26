@@ -1,0 +1,29 @@
+.container {
+    margin: 30px;
+    background: #eeeeee;
+}
+
+.header {
+    margin-left: 30px;
+}
+
+
+/* для комментариев */
+
+.item {
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 1em;
+    line-height: 1.5em;
+    list-style-type: dot;
+}
+
+/*upload image*/
+

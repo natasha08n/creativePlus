@@ -1,0 +1,23 @@
+/*regular*/
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/font-helvetica/helveticaregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*bold*/
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/font-helvetica/helveticabold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*light*/
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/font-helvetica/helveticalight-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}

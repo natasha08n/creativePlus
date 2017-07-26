@@ -1,0 +1,860 @@
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+    background: url(http://2.bp.blogspot.com/-iFvxg9CkLPo/U0uTIS8ieWI/AAAAAAAAATE/BFuBsdCrfqI/s1600/background.png) repeat #fff;
+    position: relative;
+}
+
+ul.new-nav li a:hover {
+    cursor: pointer;
+}
+
+
+/*КНОПКА ВВЕРХ*/
+
+.go-to-top {
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #333;
+    color: #f26c4f;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.go-to-top:hover,
+.go-to-top:active,
+.go-to-top:focus {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.go-to-top.btn-lg {
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.navbar-inverse {
+    background: url(http://1.bp.blogspot.com/-B6zsM4f1UM4/U0uTJb_7yiI/AAAAAAAAATg/PsZGk9FUBfU/s1600/headertopbg.png) repeat center center #444;
+    border: 0;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    transition: all .5s ease 0s;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #f26c4f;
+}
+
+.navbar-brand {
+    padding: 15px 80px;
+}
+
+a#logo.navbar-brand {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+}
+
+a#logo {
+    color: white;
+    background-color: #f26c4f;
+    transition: all .5s ease 0s;
+}
+
+a#logo:hover,
+a#logo:focus {
+    background-color: #f26c4f;
+    color: black;
+    transition: all .5s ease 0s;
+}
+
+a#username {
+    color: #f26c4f;
+}
+
+.header {
+    background: url(http://4.bp.blogspot.com/-JBEjo6pEufs/U0uTJAXc62I/AAAAAAAAATY/tkrZ5Fk2H4Y/s1600/headerbg.jpg) no-repeat center center #444;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 100px;
+    border-bottom: 5px solid #999;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    z-index: 500;
+    margin-bottom: 30px;
+}
+
+
+/*стили для заголовков поста*/
+
+div.description .mainTitle {
+    font-family: inherit;
+    font-weight: 600;
+    transition: all .7s linear;
+}
+
+div.description .mainTitle:hover {
+    color: #f26c4f;
+    transition: all .7s linear;
+    cursor: pointer;
+}
+
+div.description .mainSubtitle {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 18px;
+    color: #f26c4f;
+    cursor: default;
+}
+
+div.description .mainDate {
+    color: #ccc;
+    font-family: inherit;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+div.description p {
+    color: #989898;
+}
+
+
+/*DIV С ЛЕСЕНКОЙ*/
+
+.post {
+    margin-top: 7px;
+}
+
+.post-img {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 7px;
+    
+    min-height: 200px;
+}
+
+.post-img img {
+    border: 1px solid #ccc;
+}
+
+.description {
+    border: 1px solid #ccc;
+    margin: 25px 0;
+    padding: 15px;
+    margin-top: 7px;
+    background: url(http://1.bp.blogspot.com/-gvBDWFzrKms/U0uTJu1FpCI/AAAAAAAAAUA/JbNUwz4Ahgo/s1600/postbg.png) repeat #fff;
+    position: relative;
+}
+
+
+/*УГОЛОК*/
+
+.angle {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-top: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -11px;
+    left: 20px;
+}
+
+.description:before,
+.description:after {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 5px;
+    right: 0;
+    border: inherit;
+    padding: 2px;
+    background: inherit;
+    width: calc(100% - 10px);
+}
+
+.description:after {
+    bottom: -11px;
+    left: 10px;
+    width: calc(100% - 20px);
+    box-shadow: 0px 0px 2px #ccc;
+}
+
+.input-group-addon {
+    background-color: white;
+}
+
+.form-control {
+    width: 100%;
+    padding: 25px 5px;
+    box-shadow: none;
+}
+
+.form-control:focus,
+.form-control:active {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: 1px solid #ccc;
+}
+
+.join,
+.join:focus,
+.join:active {
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+
+/*КНОПКА*/
+
+.sideBarZag {
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.description h6 {
+    font-family: inherit;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 12px;
+    color: #989898;
+}
+
+.btn-join {
+    background: #ebebeb;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: background .4s linear;
+    margin: 0px;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, .2);
+}
+
+.btn-join:hover {
+    background: #d3d1d1;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, .4) !important;
+}
+
+.btn-icon {
+    opacity: .3;
+}
+
+.postText {
+    word-wrap: break-word;
+}
+
+
+/*RECENT POSTS*/
+
+ul.recentPost {
+    padding-left: 0;
+}
+
+.recentPost li {
+    list-style: none;
+    position: relative;
+    padding-left: 10px;
+}
+
+.recentPost li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+    font-style: italic;
+}
+
+.recentPost li:before {
+    content: '\25ba';
+    color: #333;
+    font-size: 8px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    line-height: 0;
+}
+
+small {
+    color: #ccc;
+    font-style: italic;
+}
+
+
+/*POPULAR TAGS*/
+
+.tags {
+    margin: 5px 3px;
+}
+
+
+/*FOOTER*/
+
+footer {
+    margin-top: 70px;
+    background-color: #343434;
+    padding: 50px 0 120px 0;
+    color: white;
+}
+
+footer p {
+    color: rgba(255, 255, 255, .8);
+}
+
+.btn-foo {
+    background-color: #f27255;
+    color: #ca3c20;
+    border: 1px solid #f27255;
+    box-shadow: 1px 1px 0px rgba(202, 60, 32, .2);
+    transition: all 1s ease;
+}
+
+.btn-foo:hover {
+    background-color: #e06147;
+    color: white;
+    border: 1px solid #f27255;
+    box-shadow: 1px 1px 0px rgba(202, 60, 32, .4);
+    transition: all 1s ease;
+}
+
+
+/*
+ul.social-links {
+    padding-left: 0;
+}
+.social-links li {
+    list-style: none;
+    float: left;
+    padding: 7px;
+}
+
+.social-links li a {
+    background-color: #f26c4f;
+    padding: 6px 10px;
+    display: block;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.social-links:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+*/
+
+
+/*СТИЛИ ДЛЯ МОДАЛКИ*/
+
+.fa-warning:before,
+.fa-exclamation-triangle:before,
+.login-err,
+.reg-err {
+    color: brown;
+}
+
+
+/*стиль для плюсика*/
+
+sup {
+    opacity: .3;
+    font-size: 20px;
+}
+
+
+/*СОЦИАЛЬНЫЕ СЕТИ*/
+
+ul.socialLinks {
+    padding-left: 0;
+}
+
+.socialLinks li {
+    list-style-type: none;
+    float: left;
+    padding-right: 7px;
+}
+
+.socialLinks li a {
+    color: white;
+    background-color: #f26c4f;
+    text-decoration: none;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s linear;
+}
+
+.socialLinks li a:hover {
+    background-color: #666;
+    transition: all .3s linear;
+}
+
+ul.socialLinks:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/*СТРАНИЦА ONE POST*/
+
+
+/*стили блока комментариев к посту*/
+
+ul.commentView {
+    padding-left: 0;
+}
+
+ul.commentView li {
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/*.comments {
+    border: 1px solid #ccc;
+    margin: 25px 0;
+    padding: 15px;
+    margin-top: 7px;
+    background: url(http://1.bp.blogspot.com/-gvBDWFzrKms/U0uTJu1FpCI/AAAAAAAAAUA/JbNUwz4Ahgo/s1600/postbg.png) repeat #fff;
+}*/
+
+.commentConvert {
+    margin: 25px 0;
+    padding: 15px;
+    margin-top: 7px;
+    background: url(http://1.bp.blogspot.com/-gvBDWFzrKms/U0uTJu1FpCI/AAAAAAAAAUA/JbNUwz4Ahgo/s1600/postbg.png) repeat #fff;
+    border: 1px solid #ccc;
+}
+
+.comments h2 {
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.comments #userName {
+    color: #f26c4f;
+    font-weight: 600;
+}
+
+img.img-user {
+    float: left;
+    width: 5%;
+    height: auto;
+    /*    margin-right: 10px;*/
+}
+
+div.comments:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+ul#demo {
+    padding-left: 0;
+}
+
+ul#demo li {
+    list-style-type: none;
+    cursor: default;
+}
+
+
+/*стили для изображения onePost*/
+
+.onePost {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 7px;
+    position: relative;
+    min-height: 500px;
+}
+
+.zag {
+    position: absolute;
+    top: 50%;
+    margin-top: -3%;
+    left: 50%;
+    margin-left: -50%;
+    padding: 30px;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, .5);
+    border-left: 6px solid white;
+    border-right: 6px solid white;
+}
+
+.zag p {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .9);
+}
+
+
+/*редактирование и удаление поста*/
+
+ul.menuForPost {
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    padding-left: 0;
+}
+
+.menuForPost li,
+.socialForPost li {
+    list-style-type: none;
+    padding: 7px;
+}
+
+.menuForPost li a,
+.socialForPost li a,
+.socialForIndexPost li a {
+    cursor: pointer;
+    padding: 7px;
+    color: white;
+    border-radius: 4px;
+    background-color: #f26c4f;
+    transition: all .3s ease;
+}
+
+.menuForPost li a:hover,
+.socialForPost li a:hover,
+.socialForIndexPost li a:hover {
+    background-color: #666;
+    transition: all .7s ease;
+}
+
+
+/*стили для социальных сетей поста*/
+
+ul.socialForPost {
+    position: absolute;
+    left: 8px;
+    bottom: 0;
+    padding-left: 0;
+    z-index: 9999;
+}
+
+.socialForPost li a,
+.socialForIndexPost li a {
+    text-decoration: none;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .7s ease;
+}
+
+ul.socialForIndexPost {
+    padding-left: 10px;
+}
+
+ul.socialForIndexPost li {
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+ul.socialForIndexPost li:last-child {
+    padding-bottom: 0;
+}
+
+
+/*стили для социальных сетей поста на странице index.html*/
+
+.socialIndexPost {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    padding: 0;
+    /*    z-index: 9999;*/
+}
+
+
+/*реализация показа иконок при наведении мыши*/
+
+ul.socialForPost,
+ul.menuForPost {
+    opacity: 0;
+    transition: all .7s linear;
+}
+
+.onePost:hover ul.socialForPost,
+.onePost:hover ul.menuForPost {
+    opacity: 1;
+    transition: all .7s linear;
+}
+
+.btn-create-post {
+    color: white;
+    margin-left: 7px;
+}
+
+
+/*страница создания поста*/
+
+.accountHeader {
+    margin-bottom: 20px;
+}
+
+.accountHeader h2 {
+    margin-bottom: 15px;
+}
+
+div.createPost,
+div.editPost {
+    background-color: white;
+    border: 2px solid #ddd;
+    padding: 30px;
+}
+
+.createPost input[type="text"],
+.editPost input[type="text"] {
+    outline: none;
+    width: 50%;
+    padding: 5px;
+    border: 2px solid #ddd;
+    box-shadow: 0 0 1px #ddd;
+    border-radius: 4px;
+}
+
+.createPost textarea,
+.editPost textarea {
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid #ddd;
+    box-shadow: 0 0 1px #ddd;
+    border-radius: 4px;
+}
+
+.createPost sup,
+.editPost sup {
+    color: #f26c4f;
+    opacity: 1;
+    font-size: 18px;
+}
+
+img.select-img {
+    width: 10%;
+    height: auto;
+}
+
+.createPost span,
+.editPost span {
+    color: #f26c4f;
+}
+
+.btn-create-post,
+.btn-edit-post {
+    color: white;
+    margin-right: 10px;
+}
+
+
+/*создание комментария*/
+
+div.createСomment {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    padding-bottom: 35px;
+}
+
+textarea.commnet-create-text {
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 1px #ccc;
+    border-radius: 4px;
+}
+
+.btn-create-comment {
+    color: white;
+    margin-right: 10px;
+}
+
+
+/*индекс Аккаунт*/
+
+.btn-create-post {
+    color: white;
+    margin-right: 10px;
+}
+
+.makePost {
+    text-align: right;
+}
+
+.makePost span {
+    color: #666;
+    font-style: italic;
+}
+
+.makePost a {
+    text-decoration: none;
+}
+
+
+/*стили для колчиества комментов*/
+.post-img {
+    position: relative;
+}
+
+.countComments {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px 20px;
+    background-color: #f26c4f;
+    color: white;
+    border-radius: 4px;
+    cursor: default;
+}
+
+
+/*leftSocial*/
+ul.leftSocial {
+    position: fixed;
+    left: -15px;
+    top: 300px;
+    z-index: 9999;
+}
+
+ul.leftSocial li {
+    list-style-type: none;
+}
+
+ul.leftSocial li a {
+    padding: 5px;
+    background-color: #f26c4f;
+    text-decoration: none;
+    font-size: 18px;
+    color: #bb341b;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s linear;
+    box-shadow: 0 0 1px #bb341b;
+}
+
+ul.leftSocial .socialTop a {
+    border-radius: 0 4px 0 0;
+}
+
+ul.leftSocial .socialBottom a {
+    border-radius: 0 0 4px 0;
+}
+
+ul.leftSocial li a:hover {
+    background-color: #d76049;
+    transition: all .3s linear;
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Chrome, Safari, Opera */
+    transform: scale(1.1);
+}
+
+.item {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.bold {
+    font-weight: normal;
+}
+
+ul {
+    padding-left: 1em;
+    line-height: 1.5em;
+}
+
+.itemText {
+    margin-left: 70px;
+    padding-bottom: 10px;
+}
+
+.btn-delete,
+.btn-add {
+    margin-left: 20px;
+    color: white;
+    background-color: #f27255;
+    transition: background .4s linear;
+    border-radius: 4px;
+    border: none;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.btn-delete:hover {
+    background-color: #ca3c20;
+    transition: all .6s linear;
+}
+
+.btn-add {
+    color: #666;
+    margin-top: 7px;
+    background-color: #ddd;
+}
+
+.btn-add:hover {
+    color: #666;
+    background-color: #b9b9b9;
+    transition: all .6s linear;
+}
+
+.deleted-comment {
+    font-style: italic;
+    opacity: .5;
+}
+
+
+/*новые стили*/
+
+ul.new-nav li a:hover,
+.post img:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Creative+</title>
+    <link rel="shortcut icon" href="img/heart.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <!--Script vue js-->
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/vee-validate.js"></script>
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="logo" class="navbar-brand" href="index.html">Creative<sup>+</sup></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Toutorials</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Other</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+                <div id="appMenu">
+                    <ul v-if="userInfo==null" class="nav navbar-nav navbar-right">
+                        <li><a class="hidden-sm" id="username" href="#" data-toggle="modal" data-target=".loginForm">Sign In</a></li>
+                        <li><a class="hidden-sm" href="#" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
+                    </ul>
+                    <ul v-else class="nav navbar-nav navbar-right new-nav">
+                        <li><a class="hidden-sm" id="username" :href="'index.html?userId='+userInfo.id">Hello, {{userInfo.login}}!</a></li>
+                        <li><a class="hidden-sm" v-on:click="logout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="header"></div>
+
+    <ul class="leftSocial">
+        <li class="socialTop"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+        <li class="socialBottom"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    </ul>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div id="app">
+                    <div class="onePost">
+                        <ul v-if="identityPost()" class="menuForPost">
+                            <li><a v-on:click="newPath()"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                            <li><a data-toggle="modal" data-target="#modalDelete"><span class="glyphicon glyphicon-remove"></span></a></li>
+                        </ul>
+                        <img v-bind:src="photo" class="img-responsive center-block">
+                        <div class="zag">
+                            <p class="text-center">{{ title }}</p>
+                        </div>
+                        <ul class="socialForPost">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="description">
+                        <!--<h2 class="mainTitle">{{ title }}</h2>-->
+                        <p class="mainDate">{{ subscribe }}</p>
+                        <h3 class="mainSubtitle">{{ subtitle }}</h3>
+                        <p class="postText text-justify">{{ text }}</p>
+                    </div>
+                </div>
+
+                <div class="createСomment" v-if="isUserLogged()==true" id="appIsLogged">
+                    <h2>Create Comment</h2>
+
+                    <label for="textComment">Comment Text</label>
+                    <br>
+                    <textarea id="textComment" rows="6" maxlength="1000" class="commnet-create-text"></textarea>
+                    <br>
+
+                    <input class="btn-join btn-foo btn-create-comment" type="button" onclick="createNewComment()" value="Add Comment" />
+                </div>
+
+                <!-- вывод комментариев к посту -->
+                <script type="text/x-template" id="item-template">
+                    <div class="comments">
+                        <li class="text-justify">
+                            <div v-if="model.value.id!=0" :class="{bold: isFolder}">
+                                <img src="img/user.png" alt="user" class="img-responsive img-user">
+                                <div class="itemText">
+                                    <span id="userName">{{model.value.loginUser}}</span> &nbsp;
+                                    <span>{{model.value.userAuthor}}</span> &nbsp;
+                                    <em>{{model.value.dateCommentCreate}}</em>
+                                    <input type="button" class="add btn-add" @click="addChild" v-if="this.$root.userInfo.id && model.value.text!='This comment has been removed.'" value="Reply">
+                                    <input type="button" class="btn-delete" value="Delete" v-if="this.$root.userInfo.id==model.value.userId && model.value.text!='This comment has been removed.'" v-on:click="deleteComment()">
+                                    <br>
+                                    <span class="deleted-comment" v-if="model.value.text=='This comment has been removed.'" @click="toggle">{{model.value.text}}</span>
+                                    <span v-else @click="toggle">{{model.value.text}}</span>
+                                    <span v-if="isFolder" @click="toggle">[{{open ? '-' : '+'}}]</span>
+                                </div>
+                            </div>
+                            <ul v-show="open" v-if="isFolder">
+                                <item class="item" v-for="model in model.children" :model="model" v-bind:key="model.id">
+                                </item>
+                            </ul>
+                        </li>
+                    </div>
+                </script>
+
+
+                <!-- the demo root element -->
+                <div class="commentConvert">
+                    <h2>Comments</h2>
+                    <ul id="demo">
+                        <p v-if="treeData.length==0">There are no comments. Be first!</p>
+                        <item class="item" :model="treeData"></item>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <p>Quisque turpis lorem, vehicula eget rhoncus vel, ultricies ac mauris. Morbi lectus velit, tincidunt congue pharetra eu, varius nec libero. Vivamus justo risus, dignissim ac vestibulum eget, egestas rutrum magna. Etiam malesuada nisi et nisl volutpat tristique.</p>
+                    <ul class="socialLinks">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <br>
+                    <small>Copyright 2012 Footer here</small>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
+                    <div class="join-to-us">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-envelope btn-icon"></i>
+                                    </div>
+                                    <input type="text" class="form-control join" placeholder="Join Our Newsletter Here">
+                                    <div class="input-group-addon btn-join-block">
+                                        <input type="submit" class="btn-join btn-foo" value="Join">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--модальное окно для удаления поста-->
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Delete a post</h4>
+                </div>
+                <div class="modal-body">
+                    <p><b>Are you sure to delete the post?</b></p>
+                    <p><em>Tags and comments will be deleted as well.<br>After the post is removed, you will be redirected to the personal account page.</em></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-join" data-dismiss="modal" onclick="deletePost()">Yes, I am sure</button>
+                    <button type="button" class="btn-join btn-foo btn-create-post" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--модальное окно Login-->
+    <div class="modal animated fadeIn loginForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="loginForm">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="appLog">
+                        <form @submit.prevent="validateBeforeSubmit">
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="email" name="email" v-model="email" v-validate="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" placeholder="Email">
+                    <i v-show="errors.has('email')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="password" name="password" v-validate="'required|min:6'" :class="{'input': true, 'is-danger': errors.has('password') }" type="password" placeholder="Password">
+                    <i v-show="errors.has('password')" class="fa fa-warning"></i>
+                    <span v-show="errors.has('password')" class="help is-danger login-err">{{ errors.first('password') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <p class="control">
+                                    <button class="btn-join" type="submit">Submit</button>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--модальное окно Reg-->
+    <div class="modal animated fadeIn regForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="registrationForm">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="appReg">
+                        <form @submit.prevent="validateBeforeSubmit">
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="loginReg" name="login" v-model="login" v-validate="'required|alpha'" :class="{'input': true, 'is-danger': errors.has('login') }" type="text" placeholder="Login"/>
+                    <i v-show="errors.has('login')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('login')" class="help is-danger">{{ errors.first('login') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="emailReg" name="email" v-model="email" v-validate="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" placeholder="Email">
+                    <i v-show="errors.has('email')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12" for="name">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="nameReg" name="name" v-model="name" v-validate="'required|alpha'" :class="{'input': true, 'is-danger': errors.has('name') }" type="text" placeholder="Name">
+                    <i v-show="errors.has('name')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="surnameReg" name="surname" v-model="surname" v-validate="'required|alpha'" :class="{'input': true, 'is-danger': errors.has('surname') }" type="text" placeholder="Surname"/>
+                    <i v-show="errors.has('surname')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('surname')" class="help is-danger">{{ errors.first('surname') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="passwordReg" name="password" v-validate="'required|min:6'" :class="{'input': true, 'is-danger': errors.has('password') }" type="password" placeholder="Password">
+                    <i v-show="errors.has('password')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+
+                            <div class="column is-12">
+                                <span class="control has-icon has-icon-right">
+                    <input class="form-control" id="passwordRegConfirm" name="password" v-validate="'required|min:6'" :class="{'input': true, 'is-danger': errors.has('password') }" type="password" placeholder="Confirm password">
+                    <i v-show="errors.has('password')" class="fa fa-warning"></i>
+                    <span class="reg-err" v-show="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
+                                </span>
+                            </div>
+                            <br/>
+                            <div class="column is-12">
+                                <p class="control">
+                                    <button class="btn-join" type="submit">Submit</button>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BUTTON-UP-TO -->
+    <a id="go-to-top" href="#home" class="btn-md btn-lg go-to-top" role="button" title="Вверх">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/onePostJS.js"></script>
+
+    <!--вход на сайт-->
+    <script type="text/javascript" src="js/validationLog.js"></script>
+    <script type="text/javascript" src="js/jquery.md5.js"></script>
+
+    <!--регистрация-->
+    <script type="text/javascript" src="js/validationReg.js"></script>
+
+    <!--кнопка вверх + меняющаяся шапка-->
+    <script type="text/javascript" src="js/common.js"></script>
+</body>
+
+</html>
