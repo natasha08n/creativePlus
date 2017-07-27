@@ -151,6 +151,16 @@
       "datePostUpdate": "1500975258743",
       "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500975246/yvcw9msbeowm9cnb7h4t.jpg",
       "id": 49
+    },
+    {
+      "userId": "35",
+      "title": "How to Apologize: 5 Elements of a Successful ‘I’m Sorry’",
+      "subtitle": "Why should you apologize?",
+      "text": "Some companies don’t allow their team members to say “sorry” because they fear the legal consequences of “admitting fault.” That sort of attitude is infuriating to a customer who wants to hear someone admit their part in a problem.\n\nI recall a New York Times article that looked at the rates of legal action taken against medical doctors by upset patients and relatives. Studies found that the biggest factor in reducing legal action was encouraging the doctors to candidly admit to their patients when they had made a mistake. A separate study found “people are more than twice as likely to forgive a company that says sorry than one that instead offers them cash.”\n\nAcknowledgement of fault is a powerful act; it tells the customer “You are right, I see your perspective, and I understand it.” It recognizes a shared reality with the customer and is the opposite of the defensiveness and denial approach we can fall into. It also helps that an effective apology costs a lot less than a court case or even a refund or discount. \n (“Effective” is the key word, because not every apology hits the mark. “Sorry for any inconvenience” is a phrase which now means almost the exact opposite of the words it contains.)\n\nHow to craft an effective customer service apology\n\nI’m talking about written apologies because practicing with writing gives you more time to consider and modify your response, but the same concepts apply on the phone or in person.\n\n1. Really be sorry\n\nIf you aren’t genuinely sorry for at least some part of the problem, then don’t apologize. Instead, ask questions and listen again to make sure you truly understand the situation. Upset customers can be aggressive or extreme, sometimes because they don’t think anyone is really listening, and customers can tell when you’re saying sorry without comprehending why. \n\nBefore you respond, give yourself time to understand how you are feeling, too. My gut response can be to defend myself and try to attack the customer’s views as wrong and unfair. That doesn’t ever help, but letting myself feel that emotion, and sometimes even writing it down (not in the email — never in the email!), gives me the mental space to write a much better response.\n\n2. Validate your customer’s feelings\n\nYou don’t have to agree with everything a customer has said, but they do need to know that you have heard them and that you acknowledge how they feel.\n\n“I know it has been really frustrating for you to be held up like this when you just want to get your job done.”\n\nInvestigate reflective listening; it’s a valuable skill at work and at home.\n\n3. Explain what happened\n\nWrite a full explanation of the situation as you understand it, making sure to address all the points the customer has raised. You can probably provide information that the customer may not have access to that explains where things broke down and what the consequences were.\n\nOnly when you have validated your customer’s feelings and given them a clear explanation of what happened does your apology have a chance to be accepted as genuine.\n\ncontent-image\nClear communication is hard to achieve, especially through a computer screen. Learn How to Talk to Your Customers.\n\n4. Admit to your mistakes\n\nWhether it was your personal mistake, or the mistake of the company or service or product, explicitly admit to it, again trying to reflect the way your customer has described the problem. It should be a genuine and specific admission.\n\n“You are absolutely right; we should have made that clearer much earlier in the process” or “I can see now that I didn’t read your email properly, and that’s totally my fault.”\n\nThe sort of grudging “Well, it was really your fault but I guess the customer is always right” apology that some companies tend to give is worse than none at all.\n\n5. Explain what you’ll do differently\n\nExplain clearly what you or the company will do differently next time to avoid this happening again. This is your chance to show a commitment to improvement and to start rebuilding customer confidence.\n\n“We’ve already added a new monitoring tool that will alert our support team immediately if this happens again so that we can get on top of it quickly.”\n\nIt’s up to the customer whether or not they accept your apology, but you should make sure they know that you are there to listen and help.\n\n“I totally understand if this has been a deal breaker for you, but I want you to know that I’m happy to explain anything in more detail, or to hear from you about any other issues. Just reply to this email and it will come right back to me.”",
+      "datePostCreate": "1501164220069",
+      "datePostUpdate": "1501164220069",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1501164213/c3ahz7g2yqzkhhmresyb.jpg",
+      "id": 50
     }
   ],
   "comments": [
@@ -503,6 +513,11 @@
       "postId": "46",
       "nameTag": "Christ",
       "id": 75
+    },
+    {
+      "postId": "50",
+      "nameTag": "apologize",
+      "id": 76
     }
   ]
 }

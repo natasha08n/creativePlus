@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Creative+</title>
     <link rel="shortcut icon" href="img/heart.ico" type="image/x-icon">
     <!-- Bootstrap -->
@@ -63,9 +64,7 @@
         </div>
     </nav>
 
-
     <div class="header"></div>
-
 
     <ul class="leftSocial">
         <li class="socialTop"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
@@ -74,9 +73,43 @@
         <li class="socialBottom"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
     </ul>
 
+
+
     <div class="container">
+       <div class="row">
+            <!--pagination tepmplate for div with id="appPosts" (it is located below)-->
+            <template id="pagination-template">
+                <div class="pagination">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="pagination__left">
+                            <a href="#" v-if="hasPrev()" @click.prevent="changePage(prevPage)">Предыдущая</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="pagination__mid">
+                            <ul>
+                                <li v-if="hasFirst()"><a href="#" @click.prevent="changePage(1)">1</a></li>
+                                <li v-if="hasFirst()">...</li>
+                                <li v-for="page in pages">
+                                    <a href="#" @click.prevent="changePage(page)" :class="{ current: current == page }">
+                                    {{ page }}
+                                    </a>
+                                </li>
+                                <li v-if="hasLast()">...</li>
+                                <li v-if="hasLast()"><a href="#" @click.prevent="changePage(totalPages)">{{ totalPages }}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="pagination__right">
+                            <a href="#" v-if="hasNext()" @click.prevent="changePage(nextPage)">Следующая</a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+       </div>
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="appAllPosts">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="appPosts">
 
                 <div class="accountHeader" v-if="accountActive">
                     <h2 class="text-center" v-if="postsExist()>0">There are all posts, which you have created early.</h2>
@@ -87,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="post" v-for="(item, index) in items">
+                <div class="post" v-for="(item, index) in posts">
                     <div class="post-img">
                         <div class="countComments" v-if="item.commentsCount==0">No Comments</div>
                         <div class="countComments" v-else-if="item.commentsCount==1">1 Comment</div>
@@ -109,8 +142,9 @@
                         <p class="postText">{{ item.text }}</p>
                     </div>
                 </div>
-            </div>
 
+                <pagination :current="currentPage" :total="totalPosts" :perPage="perPage" @page-changed="fetchPosts" class="center-block"></pagination>
+            </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="description">
@@ -193,9 +227,7 @@
         </div>
     </footer>
 
-
-
-    <!--модальное окно Login-->
+    <!--modal window for login-->
     <div class="modal animated fadeIn loginForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="loginForm">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -234,14 +266,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
-
-
-
-    <!--модальное окно Reg-->
+    <!--modal window for registration-->
     <div class="modal animated fadeIn regForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="registrationForm">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -321,24 +349,28 @@
         </div>
     </div>
 
-    <!-- BUTTON-UP-TO -->
+    <!--button-up-to-->
     <a id="go-to-top" href="#home" class="btn-md btn-lg go-to-top" role="button" title="Вверх">
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
 
-    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script async type="text/javascript" src="js/allPostsJS.js"></script>
+    <!--for pagination-->
+    <script src="js/vue-resource.min.js"></script>
+    <script src="js/pagination.js"></script>
 
-    <!--вход на сайт-->
-    <script type="text/javascript" src="js/validationLog.js"></script>
-    <script type="text/javascript" src="js/jquery.md5.js"></script>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/allPostsJS.js"></script>
 
-    <!--регистрация-->
-    <script type="text/javascript" src="js/validationReg.js"></script>
+    <!--sign in-->
+    <script src="js/validationLog.js"></script>
+    <script src="js/jquery.md5.js"></script>
 
-    <!--кнопка вверх + меняющаяся шапка-->
-    <script type="text/javascript" src="js/common.js"></script>
+    <!--sign up-->
+    <script src="js/validationReg.js"></script>
+
+    <!--button-up-to + changing header-->
+    <script src="js/common.js"></script>
 </body>
 
 </html>

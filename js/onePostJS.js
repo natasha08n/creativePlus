@@ -15,12 +15,9 @@ $["postJson"] = function (url, data, callback) {
     });
 };
 
-//id родительского комментария
 var parentCommentId = "";
-//login родительского комментария
 var parentCommentLogin = "";
 
-//функция для создания url с индексом поста
 function getParameterByName(name, url) {
     if (!url)
         url = window.location.href;
@@ -69,9 +66,8 @@ function buildHierarchy(arry) {
 }
 
 
-//просмотр поста
+//one post
 $(document).ready(function () {
-    //записываемя id необходимого с помощью функции построения url -> getParameterByName() - она выше определена
     var findPostId = getParameterByName('postId');
 
     var month = [
@@ -89,7 +85,7 @@ $(document).ready(function () {
         "December",
     ];
 
-    //пишем "", чтобы при загрузке страницы не было {{title}} и так далее
+    //write "" so that when the page is loading, there is no {{title}}
     var app = new Vue({
         el: '#app',
         data: {
@@ -111,7 +107,7 @@ $(document).ready(function () {
                 if (findUserId == null) {
                     return false;
                 } else {
-                    //проверяем принадлежит ли текущий пост авторизированному пользователю для того, чтобы либо показать, либо скрыть кнопки удаления/редактирования
+                    //check if current post belong authorized user or not. if yes, slow edit/delete buttons
                     return this.authorId == findUserId.id;
                 }
             },
@@ -130,9 +126,9 @@ $(document).ready(function () {
 
 
     jQuery.get(
-        //получаем пост и его автора
+        //get the post and its author
         "http://localhost:3000/posts/" + findPostId + "?_expand=user", {},
-        //вызывется только после того как вернется результат от http://localhost:3000/posts
+        //this function will be called only after the result returns from http://localhost:3000/posts
         function (findPost) {
 
             var formattedDate = new Date(parseInt(findPost.datePostUpdate));
@@ -163,13 +159,13 @@ $(document).ready(function () {
 
     var monthNumber = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12];
 
-    //вывод комментариев к посту
+    //show comments to the post
     jQuery.get(
         "http://localhost:3000/comments/?postId=" + findPostId + "&_expand=user", {},
         function (comments) {
             if (comments.length > 0) {
                 for (var i = 0; i < comments.length; i++) {
-                    //создадим новое поля для логина юзера
+                    //create a new field for the username
                     comments[i].loginUser = comments[i].user.login;
                     var formattedDate = new Date(parseInt(comments[i].dateCommentCreate));
                     comments[i].dateCommentCreate = formattedDate.getDate() + "." + monthNumber[formattedDate.getMonth()] + "." + formattedDate.getFullYear() + ", " + formattedDate.getHours() + ":" + formattedDate.getMinutes() + ":" + formattedDate.getSeconds();
@@ -190,7 +186,7 @@ $(document).ready(function () {
                     })(comments[i]);
                 }
 
-                //формируем объект для передачи в дерево Vue
+                //form the object to transfer to the vue tree
                 var data = {
                     value: {
                         id: 0
@@ -198,7 +194,7 @@ $(document).ready(function () {
                     children: buildHierarchy(comments)
                 };
 
-                //построение дерева с помощью Vue.js
+                //building a tree with vue.js
                 Vue.component('item', {
                     template: '#item-template',
                     props: {
@@ -209,7 +205,7 @@ $(document).ready(function () {
                             open: true
                         }
                     },
-                    //меняются каждый раз когда меняется любая переменная входящая сюда
+                    //change every time when any variable that enters here is changed
                     computed: {
                         isFolder: function () {
                             return this.model.children &&
@@ -223,19 +219,18 @@ $(document).ready(function () {
                             }
                         },
                         addChild: function () {
-                            //сохраняем id комментария в переменную parentCommentId
+                            //save comment id in parentCommentId
                             parentCommentId = this.model.value.id;
                             this.userAnswered();
                             $(this).addClass('active');
                             $('body,html').animate({
                                 scrollTop: $('#appIsLogged').position().top + 70
-                                // Скорость подъема
                             }, 400);
 
                         },
-                        //удаление комментария,точнее замена основного текста комментария на текст о том,что комментарий удалён
+                        //function only replace the main text of the comment with the text "This comment has been removed."
                         deleteComment: function () {
-                            //сохраняем id комментария в переменную commentId
+                            //save comment id in the variable commentId
                             var commentId = this.model.value.id;
                             $.ajax({
                                 url: "http://localhost:3000/comments/" + commentId,
@@ -249,7 +244,7 @@ $(document).ready(function () {
                             });
                         },
                         userAnswered: function(){
-                            //сохраняем login автора комментария в переменную parentCommentLogin
+                            //save the comment's author login in the variable parentCommentLogin 
                             return parentCommentLogin = this.model.value.loginUser;
                         }
                     }
@@ -285,7 +280,7 @@ $(document).ready(function () {
         });
 });
 
-//проверяем зарегистрирован ли пользователь и если да, то отображаем форму добавления комментария
+//check whether the user is authorized and if so show form "create comment"
 var appIsLogged = new Vue({
     el: '#appIsLogged',
     data: {
@@ -302,7 +297,7 @@ var appIsLogged = new Vue({
     }
 });
 
-//удаление поста и всех зависимостей к нему
+//delete post and all the dependencies to it
 function deletePost() {
     var findPostId = getParameterByName('postId');
     $.ajax({

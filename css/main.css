@@ -15,7 +15,7 @@ ul.new-nav li a:hover {
 }
 
 
-/*КНОПКА ВВЕРХ*/
+/*button-up-to*/
 
 .go-to-top {
     cursor: pointer;
@@ -105,7 +105,7 @@ a#username {
 }
 
 
-/*стили для заголовков поста*/
+/*style for a post title*/
 
 div.description .mainTitle {
     font-family: inherit;
@@ -140,7 +140,7 @@ div.description p {
 }
 
 
-/*DIV С ЛЕСЕНКОЙ*/
+/*div with a ladder*/
 
 .post {
     margin-top: 7px;
@@ -168,7 +168,7 @@ div.description p {
 }
 
 
-/*УГОЛОК*/
+/*corner*/
 
 .angle {
     content: "";
@@ -236,7 +236,7 @@ div.description p {
 }
 
 
-/*КНОПКА*/
+/*button*/
 
 .sideBarZag {
     font-family: inherit;
@@ -318,7 +318,7 @@ small {
 }
 
 
-/*FOOTER*/
+/*footer*/
 
 footer {
     margin-top: 70px;
@@ -348,33 +348,7 @@ footer p {
 }
 
 
-/*
-ul.social-links {
-    padding-left: 0;
-}
-.social-links li {
-    list-style: none;
-    float: left;
-    padding: 7px;
-}
-
-.social-links li a {
-    background-color: #f26c4f;
-    padding: 6px 10px;
-    display: block;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.social-links:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-*/
-
-
-/*СТИЛИ ДЛЯ МОДАЛКИ*/
+/*stele for modal windows*/
 
 .fa-warning:before,
 .fa-exclamation-triangle:before,
@@ -384,7 +358,7 @@ ul.social-links {
 }
 
 
-/*стиль для плюсика*/
+/*style for a plus on the logo creative*/
 
 sup {
     opacity: .3;
@@ -392,7 +366,7 @@ sup {
 }
 
 
-/*СОЦИАЛЬНЫЕ СЕТИ*/
+/*social networks*/
 
 ul.socialLinks {
     padding-left: 0;
@@ -430,10 +404,10 @@ ul.socialLinks:after {
 }
 
 
-/*СТРАНИЦА ONE POST*/
+/*page indexOnePost.html*/
 
 
-/*стили блока комментариев к посту*/
+/*styles for the post's comment block*/
 
 ul.commentView {
     padding-left: 0;
@@ -446,15 +420,6 @@ ul.commentView li {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-
-/*.comments {
-    border: 1px solid #ccc;
-    margin: 25px 0;
-    padding: 15px;
-    margin-top: 7px;
-    background: url(http://1.bp.blogspot.com/-gvBDWFzrKms/U0uTJu1FpCI/AAAAAAAAAUA/JbNUwz4Ahgo/s1600/postbg.png) repeat #fff;
-}*/
 
 .commentConvert {
     margin: 25px 0;
@@ -478,7 +443,6 @@ img.img-user {
     float: left;
     width: 5%;
     height: auto;
-    /*    margin-right: 10px;*/
 }
 
 div.comments:after {
@@ -497,7 +461,7 @@ ul#commentUl li {
 }
 
 
-/*стили для изображения onePost*/
+/*styles for one post*/
 
 .onePost {
     background-color: white;
@@ -528,7 +492,7 @@ ul#commentUl li {
 }
 
 
-/*редактирование и удаление поста*/
+/*styles for edit and delete a post*/
 
 ul.menuForPost {
     position: absolute;
@@ -562,7 +526,7 @@ ul.menuForPost {
 }
 
 
-/*стили для социальных сетей поста*/
+/*styles for social networks for a post (index.html)*/
 
 ul.socialForPost {
     position: absolute;
@@ -598,9 +562,6 @@ ul.socialForIndexPost li:last-child {
     padding-bottom: 0;
 }
 
-
-/*стили для социальных сетей поста на странице index.html*/
-
 .socialIndexPost {
     position: absolute;
     left: 8px;
@@ -610,7 +571,7 @@ ul.socialForIndexPost li:last-child {
 }
 
 
-/*реализация показа иконок при наведении мыши*/
+/*styles for the display of icons when hovering the mouse*/
 
 ul.socialForPost,
 ul.menuForPost {
@@ -630,7 +591,7 @@ ul.menuForPost {
 }
 
 
-/*страница создания поста*/
+/*styles for the page of creation post*/
 
 .accountHeader {
     margin-bottom: 20px;
@@ -691,7 +652,7 @@ img.select-img {
 }
 
 
-/*создание комментария*/
+/*styles for comment creation*/
 
 div.createСomment {
     background-color: white;
@@ -715,7 +676,7 @@ textarea.commnet-create-text {
 }
 
 
-/*индекс Аккаунт*/
+/*styles for index account -> index*/
 
 .btn-create-post {
     color: white;
@@ -736,7 +697,7 @@ textarea.commnet-create-text {
 }
 
 
-/*стили для колчиества комментов*/
+/*styles for count comments*/
 .post-img {
     position: relative;
 }
@@ -852,9 +813,54 @@ ul {
 }
 
 
-/*новые стили*/
-
+/*new style*/
 ul.new-nav li a:hover,
 .post img:hover {
     cursor: pointer;
+}
+
+
+/* pagination */
+.pagination__mid ul li{
+    display: inline-block;
+    list-style-type: none;
+}
+
+div.pagination__left,
+div.pagination__right,
+div.pagination__mid,
+div.pagination__mid ul{
+    text-align: center;
+}
+
+div.pagination__left a,
+div.pagination__right a{
+    background-color: #f27255;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: default;
+    color: white;
+    transition: all .5s linear;
+}
+
+div.pagination__mid ul li{
+    background-color: #f27255;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: default;
+    margin-left: 1%;
+    color: white;
+    transition: all .5s linear;
+}
+
+div.pagination__mid ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+div.pagination__left a:hover,
+div.pagination__right a:hover,
+div.pagination__mid ul li:hover{
+    background-color: #ca3c20;
+    transition: all .5s linear;
 }

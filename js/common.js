@@ -28,7 +28,6 @@ $(document).ready(function () {
 
     //to top
     $(window).scroll(function () {
-        // Высота проявления кнопки
         if ($(this).scrollTop() > 100) {
             $('#go-to-top').fadeIn();
         } else {
@@ -39,8 +38,7 @@ $(document).ready(function () {
     $('#go-to-top').click(function () {
         $('body,html').animate({
             scrollTop: 0
-            // Скорость подъема
-        }, 2000);
+        }, 1500);
         return false;
     });
 
