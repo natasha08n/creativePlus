@@ -118,7 +118,7 @@
       "subtitle": "These men say they’re the Second Coming of Jesus Christ. Their disciples agree.",
       "text": "The Bible’s penultimate verse, prophesying the return of Jesus Christ, has always fascinated me. When is “soon”? And who is “I”? For the past three years I’ve followed seven men who claim to be the Second Coming of Christ (five are shown here). By immersing myself in their revelations and spending time with their disciples, I’ve tried to produce images that illustrate the human longing for faith, meaning, and salvation.\n\nReligion is somewhat mysterious to me, probably because I wasn’t raised with it in Norway. But I’ve always enjoyed reading Scripture, and over the past decade or so my interest in it has grown. I’ve found myself coming back, again and again, to that mysterious line—a promise that Christianity has been waiting nearly 2,000 years to be fulfilled.\n\nIf Christ were to come back to complete his work today, I’ve thought, what would he think of the world we’ve created? And what would we think of him? With these thoughts tumbling around in my head, I decided to start looking for messiahs.\n\nI found them the way you find everything these days: through Google. You might think there’d be more people who claim to be Christ. But while many can be called prophets, gurus, or spiritual leaders, only a few meet what I consider the minimum criteria: consistent revelations, years of scriptural records, a following of disciples.\n\nEach of these men is unique. The communities that surround them are too. For most people, belief in a higher power is an abstract thing. But for these disciples—most of whom seem highly intelligent; none appear to be brainwashed or crazy—it’s tangible. They can touch their belief.\n\nWherever I went, I tried to keep an open mind and submerge myself in their reality. One thing I was struck by is how extremely consistent several of these messiahs are. The New Testament is full of contradictions, but each of these men has a narrative that sort of reconciles those inconsistencies. In some ways they’re more coherent than the Scripture we have.\n\nI know a lot of people will dismiss these men as fakers or lunatics. But I’ve always thought that a fundamental part of the Abrahamic religions—Judaism, Christianity, Islam—involves the coming of a messiah. Those faiths may disagree about identity and timing, but I think they agree on the basic premise. So if one accepts that, why couldn’t it be one of these guys?\n\nFor me this project has been more about asking questions than finding answers. I hope it will get people to do the same—to think about belief and who has the power to define it.",
       "datePostCreate": "1500962271209",
-      "datePostUpdate": "1500975288942",
+      "datePostUpdate": "1501760927017",
       "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500449234/oek3puuce6nt0i3xsj2h.png",
       "id": 46
     },
@@ -289,19 +289,25 @@
       "text": "hello))",
       "dateCommentCreate": 1501597375580,
       "id": 37
+    },
+    {
+      "userId": 34,
+      "postId": 39,
+      "Parent": 14,
+      "text": "agree",
+      "dateCommentCreate": 1501761538470,
+      "id": 38
+    },
+    {
+      "userId": 34,
+      "postId": 39,
+      "Parent": 0,
+      "text": "agreeNew",
+      "dateCommentCreate": 1501761549581,
+      "id": 39
     }
   ],
   "postsTags": [
-    {
-      "postId": "46",
-      "nameTag": "Jesus",
-      "id": 9
-    },
-    {
-      "postId": "46",
-      "nameTag": "Christ",
-      "id": 10
-    },
     {
       "postId": "39",
       "nameTag": "live",
@@ -523,31 +529,6 @@
       "id": 70
     },
     {
-      "postId": "46",
-      "nameTag": "people",
-      "id": 71
-    },
-    {
-      "postId": "46",
-      "nameTag": "Messiah",
-      "id": 72
-    },
-    {
-      "postId": "46",
-      "nameTag": "men",
-      "id": 73
-    },
-    {
-      "postId": "46",
-      "nameTag": "Jesus",
-      "id": 74
-    },
-    {
-      "postId": "46",
-      "nameTag": "Christ",
-      "id": 75
-    },
-    {
       "postId": "54",
       "nameTag": "mirande",
       "id": 83
@@ -676,6 +657,36 @@
       "postId": "56",
       "nameTag": "ballseason",
       "id": 108
+    },
+    {
+      "postId": "46",
+      "nameTag": "christ",
+      "id": 109
+    },
+    {
+      "postId": "46",
+      "nameTag": "man",
+      "id": 110
+    },
+    {
+      "postId": "46",
+      "nameTag": "men",
+      "id": 111
+    },
+    {
+      "postId": "46",
+      "nameTag": "messiah",
+      "id": 112
+    },
+    {
+      "postId": "46",
+      "nameTag": "people",
+      "id": 113
+    },
+    {
+      "postId": "46",
+      "nameTag": "jesus",
+      "id": 114
     }
   ]
 }
