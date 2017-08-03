@@ -65,7 +65,6 @@ function buildHierarchy(arry) {
     return roots;
 }
 
-
 //one post
 $(document).ready(function () {
     var findPostId = getParameterByName('postId');
@@ -97,6 +96,7 @@ $(document).ready(function () {
             photo: "",
             authorId: "",
             tags: ""
+            //tags: []
         },
         methods: {
             newPath: function () {
@@ -124,7 +124,6 @@ $(document).ready(function () {
         }
     });
 
-
     jQuery.get(
         //get the post and its author
         "http://localhost:3000/posts/" + findPostId + "?_expand=user", {},
@@ -148,14 +147,25 @@ $(document).ready(function () {
         function (foundedTags) {
             if (foundedTags.length > 0) {
                 var newStringTags = "";
-                for (var i = 0; i < foundedTags.length; i++) {
-                    newStringTags += foundedTags[i].nameTag + ", ";
-                }
-                newStringTags = newStringTags.substring(0, newStringTags.length - 2);
-                app.tags = newStringTags;
+                var tagsArray = [];
+
+                foundedTags.forEach(function (item) {
+                    tagsArray.push(item.nameTag);
+                    //newStringTags += item.nameTag + ", ";
+                });
+                //newStringTags = newStringTags.substring(0, newStringTags.length - 2);
+                app.tags=tagsArray;
+                console.log("TA", tagsArray);
+                //app.tags = newStringTags;
+                //console.log("NST", newStringTags);
+                
+                var t, $tag_box;
+                $("#tag").tagging("add", app.tags);
+               
             }
         }
     );
+    //console.log("NT", app.tags);
 
     var monthNumber = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12];
 
@@ -243,7 +253,7 @@ $(document).ready(function () {
                                 }
                             });
                         },
-                        userAnswered: function(){
+                        userAnswered: function () {
                             //save the comment's author login in the variable parentCommentLogin 
                             return parentCommentLogin = this.model.value.loginUser;
                         }
@@ -269,7 +279,9 @@ $(document).ready(function () {
                             if (userName != null) {
                                 return userName;
                             } else {
-                                return { id: 0 };
+                                return {
+                                    id: 0
+                                };
                             }
                         }
                     }

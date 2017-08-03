@@ -106,8 +106,14 @@ $(document).ready(function () {
 
             },
             getTotalPages: function () {
+                if (getParameterByName('userId') == null) {
+                    url = "http://localhost:3000/posts"; 
+                } else {
+                    url = "http://localhost:3000/posts?userId=" + getParameterByName('userId');
+                    this.accountActive = true;
+                }
                 var that = this;
-                $.getJSON("http://localhost:3000/posts", function (allPostsFromDB) {
+                $.getJSON(url, function (allPostsFromDB) {
                     that.totalPosts = allPostsFromDB.length;
                 });
             }
