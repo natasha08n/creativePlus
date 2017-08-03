@@ -609,7 +609,8 @@ div.editPost {
 }
 
 .createPost input[type="text"],
-.editPost input[type="text"] {
+.editPost input[type="text"],
+.inputTags{
     outline: none;
     width: 50%;
     padding: 5px;
@@ -863,4 +864,33 @@ div.pagination__right a:hover,
 div.pagination__mid ul li:hover{
     background-color: #ca3c20;
     transition: all .5s linear;
+}
+
+/*styles for tags*/
+.inputTags{
+    width: 100%;
+}
+.tagging{
+    padding: 5px;
+}
+.tag{
+    background-color: #f27255;
+    margin: 5px 10px 5px 0;
+}
+
+.tag span{
+    background-color: #d8563d;
+    padding: 8px 10px 8px;
+    color: #ffdbd5;
+}
+
+.tag .tag-i{
+    color: #ffdbd5;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.tag .tag-i:hover{
+    color: #333;
+    text-decoration: none;
 }
