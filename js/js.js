@@ -29,9 +29,9 @@ function makePost() {
     var date = new Date();
     date = date.valueOf();
 
-    var tags = jQuery("#tags").val();
+    var newTags = $("#tag").tagging("getTags");
 
-    if (title == "" || subtitle == "" || text == "" || tags == "") {
+    if (title == "" || subtitle == "" || text == "" || newTags == "") {
         alert("Fill in all fields!");
     } else {
         //write the post
@@ -44,33 +44,29 @@ function makePost() {
             "datePostUpdate": date,
             "photoPost": photo
         }, function (postdata) { //write the data about new post in SessionStorage
-            createTags(postdata.id, jQuery("#tags").val(), function (index) {
+            createTags(postdata.id, newTags, function (index) {
                 window.location.href = "indexOnePost.html?postId=" + index;
             });
         });
     }
 }
 
-function createTags(postIndex, tags, callback) {
-    //divide the array into tags
-    var re = /\s*,\s*/;
-    var tagList = tags.split(re);
+function createTags(postIndex, arrayTags, callback) {
     var check = 0;
-
-    for (var i = 0; i < tagList.length; i++) {
+    for (var i = 0; i < arrayTags.length; i++) {
         $.ajax({
             type: 'POST',
             url: 'http://localhost:3000/postsTags',
             data: {
                 "postId": postIndex,
-                "nameTag": tagList[i],
+                "nameTag": arrayTags[i],
             },
             error: function (error) {
                 alert("Sorry, tags didn't write in the database. Please, delete your post and try again.");
             },
             success: function (success) {
                 check++;
-                if (check == tagList.length) {
+                if (check == arrayTags.length) {
                     callback(postIndex);
                 }
             }
