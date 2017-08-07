@@ -12,7 +12,7 @@ $(document).ready(function () {
             show: true,
             posts: [], //variable for showing all posts
             totalPosts: 0,
-            perPage: 2,
+            perPage: 10,
             currentPage: 1,
             accountActive: false,
         },
@@ -34,9 +34,9 @@ $(document).ready(function () {
             //functions for pagination
             fetchPosts: function (page) {
                 if (creativeFunctions.getParameterByName('userId') == null) {
-                    url = creativeConsts.baseUrl + "posts?_sort=datePostCreate&_order=desc&_page=" + page + "&_limit=2";
+                    url = creativeConsts.baseUrl + "posts?_sort=datePostCreate&_order=desc&_page=" + page + "&_limit=" + this.perPage;
                 } else {
-                    url = creativeConsts.baseUrl + "posts?_sort=datePostCreate&_order=desc&userId=" + creativeFunctions.getParameterByName('userId') + "&_page=" + page + "&_limit=2";
+                    url = creativeConsts.baseUrl + "posts?_sort=datePostCreate&_order=desc&userId=" + creativeFunctions.getParameterByName('userId') + "&_page=" + page + "&_limit=" + this.perPage;
                     this.accountActive = true;
                 }
 
