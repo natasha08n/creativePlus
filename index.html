@@ -143,7 +143,15 @@
                     </div>
                 </div>
 
-                <pagination :current="currentPage" :total="totalPosts" :perPage="perPage" @page-changed="fetchPosts" class="center-block"></pagination>
+               <!--our pagination component-->
+               <!--start method fetchPhotos (method for uploading posts) with the help of our created event @page-changed (with $emit)-->
+                <pagination
+                    :current="currentPage"
+                    :total="totalPosts"
+                    :perPage="perPage"
+                    @page-changed="fetchPosts"
+                    class="center-block"
+                ></pagination>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -363,7 +371,7 @@
     <script src="js/variables.js"></script>
 
     <!--for pagination-->
-    <script src="js/vue-resource.min.js"></script>
+    <script src="js/vue-resource.min.js"></script><!-- plugin for pagination -->
     <script src="js/pagination.js"></script>
 
     
