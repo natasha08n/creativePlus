@@ -845,7 +845,7 @@ div.pagination__right a{
     transition: all .5s linear;
 }
 
-div.pagination__mid ul li{
+div.pagination__mid a{
     background-color: #f27255;
     padding: 5px 10px;
     border-radius: 4px;
@@ -853,18 +853,20 @@ div.pagination__mid ul li{
     margin-left: 1%;
     color: white;
     transition: all .5s linear;
-}
-
-div.pagination__mid ul li a{
     color: white;
     text-decoration: none;
+    margin: 0 5px;
 }
 
 div.pagination__left a:hover,
 div.pagination__right a:hover,
-div.pagination__mid ul li:hover{
+div.pagination__mid a:hover{
     background-color: #ca3c20;
     transition: all .5s linear;
+}
+
+div.pagination__mid a.current{
+    background-color: #ca3c20;
 }
 
 /*styles for tags*/
