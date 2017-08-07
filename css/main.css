@@ -837,9 +837,10 @@ div.pagination__mid ul{
 div.pagination__left a,
 div.pagination__right a{
     background-color: #f27255;
+    text-decoration: none;
     padding: 8px 20px;
     border-radius: 4px;
-    cursor: default;
+    cursor: pointer;
     color: white;
     transition: all .5s linear;
 }
@@ -848,7 +849,7 @@ div.pagination__mid ul li{
     background-color: #f27255;
     padding: 5px 10px;
     border-radius: 4px;
-    cursor: default;
+    cursor: pointer;
     margin-left: 1%;
     color: white;
     transition: all .5s linear;
