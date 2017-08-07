@@ -1,5 +1,3 @@
-var photo = "https://res.cloudinary.com/creativeplus/image/upload/v1500449234/oek3puuce6nt0i3xsj2h.png";
-
 $(document).ready(function(){
     var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/creativeplus/upload';
     var CLOUDINARY_UPLOAD_PRESET = 'g6efihdk';
@@ -22,7 +20,7 @@ $(document).ready(function(){
         }).then(function(res){
             console.log(res);
             imgPreview.src=res.data.secure_url;
-            photo=res.data.secure_url;
+            creativeConsts.photo=res.data.secure_url;
         }).catch(function(err){
             console.error(err);
         });
