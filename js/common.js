@@ -7,23 +7,25 @@ $(document).ready(function () {
                 id: 0
             }
         },
-        mounted: function(){
+        mounted: function () {
             this.userInfo = this.getUserInfo();
         },
         methods: {
             getUserInfo: function () {
                 var userName = JSON.parse(sessionStorage.getItem('userInfo'));
-                if (userName != null) {
-                    return userName;
+                if (userName != undefined) {
+                    return userName[0];
                 } else {
-                    return null;
+                    return {
+                        id: 0
+                    };
                 }
             },
-            logout: function(){
+            logout: function () {
                 sessionStorage.removeItem('userInfo');
                 window.location.href="index.html";
             }
-        }        
+        }
     });
 
     //to top
