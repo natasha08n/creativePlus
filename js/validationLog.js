@@ -27,7 +27,12 @@ $(document).ready(function () {
                         },
                         function (data) {
                             if (data.length > 0) {
-                                sessionStorage.setItem('userInfo', JSON.stringify(data[0]));
+                                var userInfo = [];
+                                userInfo.push({
+                                    id: data[0].id,
+                                    login: data[0].login
+                                });
+                                sessionStorage.setItem('userInfo', JSON.stringify(userInfo));
                                 location.reload();
                             }
                             else{
@@ -41,7 +46,7 @@ $(document).ready(function () {
                 this.$validator.validateAll().then(result => {
                     if (result) {
                         // eslint-disable-next-line
-                        //alert('From Submitted!');
+                        // alert('From Submitted!');
                         appLog.log();
                     }
                     //alert('Correct them errors!');
