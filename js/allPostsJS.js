@@ -1,36 +1,11 @@
-//create new url and get url-parameters
-function getParameterByName(name, url) {
-    if (!url)
-        url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results)
-        return null;
-    if (!results[2])
-        return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
 $(document).ready(function () {
+    if (JSON.parse(sessionStorage.getItem('userInfo')) == undefined && creativeFunctions.getParameterByName('userId')) {
+        window.location.href = "error.html";
+    }
+
     var url = "";
 
-    var month = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ];
-
-    /*show all posts from DB with vue-pagination*/
+    //show all posts from DB with vue-pagination
     new Vue({
         el: '#appPosts',
         data: {
@@ -52,24 +27,16 @@ $(document).ready(function () {
                 //don't replace page for a new one, we build new url
                 window.location.href = "indexOnePost.html?postId=" + postId;
             },
-            identityPost: function () {
-                var findUserId = JSON.parse(sessionStorage.getItem('userInfo'));
-                if (findUserId == null) {
-                    return false;
-                } else {
-                    //check whether the current post belongs to an authorized user in order to either show/hide the delete/edit buttons
-                    return this.authorId == findUserId.id;
-                }
-            },
+            identityPost: creativeFunctions.identityPost,
             postsExist: function () {
                 return this.posts.length;
             },
             //functions for pagination
             fetchPosts: function (page) {
-                if (getParameterByName('userId') == null) {
-                    url = "http://localhost:3000/posts?_page=" + page + "&_limit=2"; 
+                if (creativeFunctions.getParameterByName('userId') == null) {
+                    url = creativeConsts.baseUrl + "posts?_sort=datePostCreate&_order=desc&_page=" + page + "&_limit=2";
                 } else {
-                    url = "http://localhost:3000/posts?userId=" + getParameterByName('userId') + "&_page=" + page + "&_limit=2";
+                    url = creativeConsts.baseUrl + "posts?_sort=datePostCreate&_order=desc&userId=" + creativeFunctions.getParameterByName('userId') + "&_page=" + page + "&_limit=2";
                     this.accountActive = true;
                 }
 
@@ -80,18 +47,17 @@ $(document).ready(function () {
                     if (allPostsFromDB.length > 0) {
                         //remember all the posts
                         for (var i = 0; i < allPostsFromDB.length; i++) {
-                            var maxSizeText = 400;
-                            allPostsFromDB[i].text = allPostsFromDB[i].text.substring(0, maxSizeText) + '...';
+
+                            allPostsFromDB[i].text = creativeFunctions.cropText(allPostsFromDB[i].text, creativeConsts.allTextMaxSize);
 
                             //change date format
-                            var formattedDate = new Date(parseInt(allPostsFromDB[i].datePostUpdate));
-                            allPostsFromDB[i].datePostUpdate = formattedDate.getDate() + "th " + month[formattedDate.getMonth()] + " " + formattedDate.getFullYear();
+                            allPostsFromDB[i].datePostUpdate = creativeFunctions.dateFormat(allPostsFromDB[i].datePostUpdate);
 
                             allPostsFromDB[i].commentsCount = 0; // we can assign null
 
                             //count comments to every post
                             (function (onePost) {
-                                $.getJSON("http://localhost:3000/comments/?postId=" + onePost.id, function (findCommentsCount) {
+                                $.getJSON(creativeConsts.baseUrl + "comments/?postId=" + onePost.id, function (findCommentsCount) {
                                     onePost.commentsCount = findCommentsCount.length;
                                 });
                             })(allPostsFromDB[i]);
@@ -106,10 +72,10 @@ $(document).ready(function () {
 
             },
             getTotalPages: function () {
-                if (getParameterByName('userId') == null) {
-                    url = "http://localhost:3000/posts"; 
+                if (creativeFunctions.getParameterByName('userId') == null) {
+                    url = creativeConsts.baseUrl + "posts";
                 } else {
-                    url = "http://localhost:3000/posts?userId=" + getParameterByName('userId');
+                    url = creativeConsts.baseUrl + "posts?userId=" + creativeFunctions.getParameterByName('userId');
                     this.accountActive = true;
                 }
                 var that = this;
@@ -137,16 +103,15 @@ $(document).ready(function () {
         }
     });
 
-    $.getJSON("http://localhost:3000/posts?_sort=datePostUpdate&_order=desc&_limit=3", function (allSortedPosts) {
+    $.getJSON(creativeConsts.baseUrl + "posts?_sort=datePostUpdate&_order=desc&_limit=3", function (allSortedPosts) {
         if (allSortedPosts.length > 0) {
             //remember all theposts
             for (var i = 0; i < allSortedPosts.length; i++) {
-                var maxSizeText = 100;
-                allSortedPosts[i].text = allSortedPosts[i].text.substring(0, maxSizeText) + '...';
+
+                allSortedPosts[i].text = creativeFunctions.cropText(allSortedPosts[i].text, creativeConsts.recentTextMaxSize);
 
                 //change date format
-                var formattedDate = new Date(parseInt(allSortedPosts[i].datePostUpdate));
-                allSortedPosts[i].datePostUpdate = formattedDate.getDate() + "th " + month[formattedDate.getMonth()] + " " + formattedDate.getFullYear();
+                allSortedPosts[i].datePostUpdate = creativeFunctions.dateFormat(allSortedPosts[i].datePostUpdate);
             }
             appRecentPosts.items = allSortedPosts;
         }
@@ -167,7 +132,7 @@ $(document).ready(function () {
     });
 
     //selection of popular tags
-    $.getJSON("http://localhost:3000/postsTags", function (allTags) {
+    $.getJSON(creativeConsts.baseUrl + "postsTags", function (allTags) {
         if (allTags.length > 0) {
             let frequencies = {};
             let topTags = [];
@@ -183,7 +148,6 @@ $(document).ready(function () {
             });
 
             for (let title in frequencies) {
-                //console.log(title + ': ' + frequencies[title]);
                 topTags.push({
                     title: title,
                     frequency: frequencies[title]
