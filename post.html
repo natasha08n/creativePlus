@@ -48,9 +48,9 @@
 
                 </ul>
                 <div id="appMenu">
-                    <ul v-if="userInfo==null" class="nav navbar-nav navbar-right">
+                    <ul v-if="userInfo.id==0" class="nav navbar-nav navbar-right new-nav">
                         <li><a class="hidden-sm" id="username" href="#" data-toggle="modal" data-target=".loginForm">Sign In</a></li>
-                        <li><a class="hidden-sm" href="#" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
+                        <li><a class="hidden-sm" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
                     </ul>
                     <ul v-else class="nav navbar-nav navbar-right new-nav">
                         <li><a class="hidden-sm" id="username" :href="'index.html?userId='+userInfo.id">Hello, {{userInfo.login}}!</a></li>
@@ -115,8 +115,8 @@
                         <input id="file-upload" type="file" style="display:none;">Select an Image</label>
                     </div>
 
-                    <input v-if="editOrCreate()==true" class="btn-join btn-foo btn-edit-post" type="button" onclick="editPost()" value="Save changes" />
-                    <input v-else class="btn-join btn-foo btn-edit-post" type="button" onclick="makePost()" value="Create" />
+                    <input v-if="editOrCreate()==true" class="btn-join btn-foo btn-edit-post" type="button" onclick="postFunctions.editPost()" value="Save changes" />
+                    <input v-else class="btn-join btn-foo btn-edit-post" type="button" onclick="postFunctions.makePost()" value="Create" />
                     <input class="btn-join" type="button" value="Cancel" v-on:click="redirect()" />
                 </div>
             </div>
@@ -285,15 +285,20 @@
     <script type="text/javascript" src="js/vue.js"></script>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    
+    <!--main js-->
+    <script src="js/functions.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/postFunctions.js"></script>
+    
     <script type="text/javascript" src="js/moment.min.js"></script>
     <script type="text/javascript" src="js/onePostJS.js"></script>
 
     <!--create post-->
     <script src="js/axios.min.js"></script>
-    <script src="js/js.js"></script>
 
     <!--edit post-->
-    <script src="js/editPost.js"></script>
+    <script src="js/post.js"></script>
     <script src="js/appSelectImage.js"></script>
 
     <!--button-up-to + changeing header-->

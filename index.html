@@ -51,7 +51,7 @@
 
                 </ul>
                 <div id="appMenu">
-                    <ul v-if="userInfo==null" class="nav navbar-nav navbar-right new-nav">
+                    <ul v-if="userInfo.id==0" class="nav navbar-nav navbar-right new-nav">
                         <li><a class="hidden-sm" id="username" href="#" data-toggle="modal" data-target=".loginForm">Sign In</a></li>
                         <li><a class="hidden-sm" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
                     </ul>
@@ -82,7 +82,7 @@
                 <div class="pagination">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                         <div class="pagination__left">
-                            <a href="#" v-if="hasPrev()" @click.prevent="changePage(prevPage)">Предыдущая</a>
+                            <a href="#" v-if="hasPrev()" @click.prevent="changePage(prevPage)">Previous page</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                         <div class="pagination__right">
-                            <a href="#" v-if="hasNext()" @click.prevent="changePage(nextPage)">Следующая</a>
+                            <a href="#" v-if="hasNext()" @click.prevent="changePage(nextPage)">Next page</a>
                         </div>
                     </div>
                 </div>
@@ -353,13 +353,20 @@
     <a id="go-to-top" href="#home" class="btn-md btn-lg go-to-top" role="button" title="Вверх">
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
+    
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    
+    <!--main js-->
+    <script src="js/functions.js"></script>
+    <script src="js/variables.js"></script>
 
     <!--for pagination-->
     <script src="js/vue-resource.min.js"></script>
     <script src="js/pagination.js"></script>
 
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
     <script src="js/allPostsJS.js"></script>
 
     <!--sign in-->

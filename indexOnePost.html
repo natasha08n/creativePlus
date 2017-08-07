@@ -51,9 +51,9 @@
 
                 </ul>
                 <div id="appMenu">
-                    <ul v-if="userInfo==null" class="nav navbar-nav navbar-right">
+                    <ul v-if="userInfo.id==0" class="nav navbar-nav navbar-right new-nav">
                         <li><a class="hidden-sm" id="username" href="#" data-toggle="modal" data-target=".loginForm">Sign In</a></li>
-                        <li><a class="hidden-sm" href="#" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
+                        <li><a class="hidden-sm" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
                     </ul>
                     <ul v-else class="nav navbar-nav navbar-right new-nav">
                         <li><a class="hidden-sm" id="username" :href="'index.html?userId='+userInfo.id">Hello, {{userInfo.login}}!</a></li>
@@ -140,7 +140,7 @@
                         <textarea id="textComment" rows="6" maxlength="1000" class="commnet-create-text"></textarea>
                         <br>
 
-                        <input class="btn-join btn-foo btn-create-comment" type="button" onclick="createNewComment()" value="Add Comment" />
+                        <input class="btn-join btn-foo btn-create-comment" type="button" onclick="postFunctions.createNewComment()" value="Add Comment" />
                     </div>
                     <div class="commentConvert">
                         <h2>Comments</h2>
@@ -205,7 +205,7 @@
                     <p><em>Tags and comments will be deleted as well.<br>After the post is removed, you will be redirected to the personal account page.</em></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-join" data-dismiss="modal" onclick="deletePost()">Yes, I am sure</button>
+                    <button type="button" class="btn-join" data-dismiss="modal" onclick="postFunctions.deletePost()">Yes, I am sure</button>
                     <button type="button" class="btn-join btn-foo btn-create-post" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
@@ -342,6 +342,11 @@
 
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    
+    <!--main js-->
+    <script src="js/functions.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/postFunctions.js"></script>
 
     <script type="text/javascript" src="js/moment.min.js"></script>
     <script type="text/javascript" src="js/onePostJS.js"></script>
