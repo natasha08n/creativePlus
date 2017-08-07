@@ -128,7 +128,7 @@
       "subtitle": "Poetry",
       "text": "English is an evolving field. The mediums in which it manifests itself have grown numerously and have shown different trends of popularity. In the times of Shakespeare, older prose and plays were very modern, whereas today novels and spoken word poetry seem more prevalent. That might mostly stem from the fact that we live in the Information Age and that expression is the new frontier. Everyone has the ability to create and put their ideas out there into the world. One very modern way of doing so, which has found its way into popular media, is spoken word.",
       "datePostCreate": "1500974958823",
-      "datePostUpdate": "1501750932347",
+      "datePostUpdate": "1502020494943",
       "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500974947/lpdgnxfb2jimxf0kgq7k.jpg",
       "id": 47
     },
@@ -191,6 +191,16 @@
       "datePostUpdate": "1501751439638",
       "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1501751437/zwrrua7egq5seslm94jb.jpg",
       "id": 56
+    },
+    {
+      "userId": "34",
+      "title": "Paws and Noses at the Forefront of the Fight Against Illegal Wildlife Trade in Central Asia",
+      "subtitle": "Paws and Noses at the Forefront of the Fight",
+      "text": "Intelligence from our informant network pointed to illegal trophy hunts in Tajik National Park and trophies illegally exported from Tajikistan into Kyrgyzstan and onwards to Russia and European countries using illegal CITES documentation: 30-40 trophies each year. With Kyrgyzstan joining the Eurasian Customs Union, we worried that the illegal transport of wildlife, including poached trophies, was likely to be even harder to detect (see the TRAFFIC report “Wildlife trade in the Eurasian Customs Union and in selected Central Asian countries“) as wildlife products traveled through countries between which customs controls would now be lifted.\n\nIn late 2015, the Kyrgyz State Customs Service signed the first Memorandum of Understanding with a foreign NGO, ours  – Panthera, the global wild cat conservation organization. And that’s how our unique collaboration started. We brought in the NGO Working Dogs for Conservation (based in Montana) and trainer Aimee Hurt to assist in cross training four detection dogs to detect snow leopard, argali and ibex. We could not have worked with a better team of dogs, handlers and local trainers. Each is wonderful and incredibly dedicated. The dogs went to work in the summer of 2016. The post at the border crossing between Tajikistan and Kyrgyzstan is inhospitable and desolate, characteristics hard on both the dogs and the morale of Border and Customs staff.\n\nBut on April 27, 2017, their sacrifices and hard work was rewarded: the team caught an illegal shipment of seven argali and four ibex trophies (see here for more information and pictures  Large consignment of argali and ibex horns were detained at the Kyrgyz-Tajik border). While both species are legally hunted on quota in the region, these had been hunted without permits in Tajikistan and were being smuggled across the border.",
+      "datePostCreate": "1501764882005",
+      "datePostUpdate": "1502020749565",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1501764876/okj4iscunbmpujyrehro.png",
+      "id": 57
     }
   ],
   "comments": [
@@ -619,16 +629,6 @@
       "id": 100
     },
     {
-      "postId": "47",
-      "nameTag": "poetry",
-      "id": 101
-    },
-    {
-      "postId": "47",
-      "nameTag": "english",
-      "id": 102
-    },
-    {
       "postId": "56",
       "nameTag": "ball",
       "id": 103
@@ -687,6 +687,31 @@
       "postId": "46",
       "nameTag": "jesus",
       "id": 114
+    },
+    {
+      "postId": "47",
+      "nameTag": "poetry",
+      "id": 115
+    },
+    {
+      "postId": "47",
+      "nameTag": "english",
+      "id": 116
+    },
+    {
+      "postId": "47",
+      "nameTag": "speaking",
+      "id": 117
+    },
+    {
+      "postId": "57",
+      "nameTag": "dog",
+      "id": 118
+    },
+    {
+      "postId": "57",
+      "nameTag": "care",
+      "id": 119
     }
   ]
 }
