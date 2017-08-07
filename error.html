@@ -51,7 +51,7 @@
 
                 </ul>
                 <div id="appMenu">
-                    <ul v-if="userInfo==null" class="nav navbar-nav navbar-right new-nav">
+                    <ul v-if="userInfo.id==0" class="nav navbar-nav navbar-right new-nav">
                         <li><a class="hidden-sm" id="username" href="#" data-toggle="modal" data-target=".loginForm">Sign In</a></li>
                         <li><a class="hidden-sm" data-toggle="modal" data-target=".regForm">Sign Up</a></li>
                     </ul>
@@ -73,7 +73,10 @@
 
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script async type="text/javascript" src="js/allPostsJS.js"></script>
+    
+    <!--main js-->
+    <script src="js/functions.js"></script>
+    <script src="js/variables.js"></script>
 
     <!--вход на сайт-->
     <script type="text/javascript" src="js/validationLog.js"></script>
