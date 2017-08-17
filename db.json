@@ -39,6 +39,16 @@
       "photo": "none",
       "isAdmin": "true",
       "id": 35
+    },
+    {
+      "login": "zhanna",
+      "name": "Zhanna",
+      "surname": "Chobat",
+      "email": "zhanna@mail.ru",
+      "hash": "735faf2e53f6f2275e7eefcff524a617",
+      "photo": "none",
+      "isAdmin": "true",
+      "id": 36
     }
   ],
   "posts": [
@@ -173,16 +183,6 @@
       "id": 54
     },
     {
-      "userId": "35",
-      "title": "titleNewtitle",
-      "subtitle": "titleNewtitle",
-      "text": "titleNewtitle",
-      "datePostCreate": "1501598168997",
-      "datePostUpdate": "1501598256073",
-      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500449234/oek3puuce6nt0i3xsj2h.png",
-      "id": 55
-    },
-    {
       "userId": "34",
       "title": "Opening Vienna’s Ball Season!",
       "subtitle": "Ball season",
@@ -201,6 +201,16 @@
       "datePostUpdate": "1502020749565",
       "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1501764876/okj4iscunbmpujyrehro.png",
       "id": 57
+    },
+    {
+      "userId": "35",
+      "title": "Brushing up my language skills with Lingoda! (not SkyEng)",
+      "subtitle": "Online language school Lingoda (not SkyEng)",
+      "text": "(not SkyEng) I've been working with the Berlin-based online language school Lingoda for nearly a year now and it has been a frequent guest on my Russian-language YouTube channel. They’ve just sponsored yet another video on my channel and as I was preparing a Russian-language post for them, I thought – why not throw in one in English too? After all, I trully love the service and the team behind it, hence it matches the only content criteria I have for this blog 🙂\n\nSo, should you be looking for online classes to study English, German, French or Spanish – this post is for you!\n\nIn my opinion, Lingoda’s offering is simply swell. The way the learning process is organized is a bit unusual at least for me, however you’ll see that this special setup is what enables them to offer classes taught exclusively by native speakers at very competitive prices. Basically, they have private and small, up to 5 people, group classes. The way it works is you buy a monthly subscription for private only, group only or mixed classes, with each package containing a certain number of classes for you to book, starting at 99 EUR / month for a mixed (private + group) package.\n\nOnce you have it you go to the classes ‘marketplace’ and sign up for classes that you want. This is where you pick\n\nwhat type of skill you’d like to practice – Grammar, Speaking and Writing,\nthe exact topic you’re interested in, say ‘modal verbs’,\nwhether you’d like to be in a private or group environment on that class, and\nwhen exactly you’d like to have that class.\nOh and by the way, you don’t have to stick to classes within 1 level: say your grammar’s poor, but you got a hang on conversational language because you lived in a country or watched (too) many TV shows in that language. That’s ok, you can take a complete beginner’s grammar class today and an advanced speaking class tomorrow, all within one subscription package. I think it’s as customizable as it can get!\n\nAnd it’s not just that, but you also can  review class study material in its entirety before even signing up, so you’ll never be in a situation when you come to class and find out that was is being taught is not what you need.\n\nBut you have to keep in mind that to afford such flexibility, teachers, especially those delivering group classes can and will vary. I find this quite unusual: to some it’s a real benefit because they get to interact with people from different regions, accents and dialects, others would rather be studying with the same instructor. If you’re prefer the latter, then I’d suggest you look at Lingoda’s private classes, where – though not guaranteed, but generally – you have an option to arrange with the tutor to be studying with her time after time.\n\nHey, a very cool additional feature here – if you did not like a teacher, the only thing you have to do is rate him 1/5 and the system will make sure that he’ll never teach a class of yours again! I think it’s much more emotionally comfortable to handle a potentially negative situation like this though a system feature as opposed to having the ‘real conversation’ of why you don’t like someone. I mean, we are all human, sometimes there’s just no chemistry and I think it’s cool to be able to solve it in this low-key manner.\n\nFinally, a big deal for sure to some of you – if you complete 90% of coursework on a particular level – you get an official CEFR certificate. No exam, nothing, just complete the classes, and you get a language certificate that you can use for college applications, jobs abroad, visa-s – the totally full and real official language certificate online, without an exam! And it’s 90% so you can skip that 10% of the material that you already mastered outside Lingoda!\n\nWhat’s next?\n\nYou can sign up for  a trial class for only 99 cents. During this first session you’ll work with a private instructor who will assess your language level, discuss your language goals and develop a study plan for you.  If you’re really serious about doing an online language course, I highly recommend you go ahead and sign up for this trial class, because once you do, you get complete access to all study materials at all levels for your chosen language, absolutely free of charge – well, for that 99 cents actually. You can then look through them and see whether you’d like to continue. To be honest, I’ve never seen a school do that, just give away materials like that and I’m really impressed with Lingoda’s approach in that you’re paying only for the instructor’s time.\n\nAs if this wasn’t cool enough, Lingoda also gave me a code for you guys, but not any code, the best code ever. It’s basically a 50 EUR off your first purchase which is totally insane. So you can get you first month of classes for 29 EUR only. If you like them, you gonna be paying full price following this period, and if not – just cancel the subscription. I told you, they are an awesome company company! The code is LNGDARU4 and it’s valid through December 31st, 2018.\n\nFinally, and I hope by now you get why I love them so much, do not forget about your 7-days money-back guarantee! Think they aren’t a good fit for your needs? Just hit that refund button, but odds are you’ll love them!",
+      "datePostCreate": "1502785392886",
+      "datePostUpdate": "1502885951288",
+      "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1502785388/xsjwcxtwvpykfwcicyi7.jpg",
+      "id": 58
     }
   ],
   "comments": [
@@ -209,112 +219,417 @@
       "postId": 39,
       "Parent": "",
       "text": "This story struck me to the core!",
-      "dateCommentCreate": 1500959219857,
-      "id": 12
+      "dateCreate": 1500959219857,
+      "dateUpdate": 1500959219857,
+      "id": 12,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 33,
       "postId": 42,
       "Parent": "",
       "text": "How do you think how much is left before another launch to the moon?",
-      "dateCommentCreate": 1500961167010,
-      "id": 13
+      "dateCreate": 1500961167010,
+      "dateUpdate": 1500961167010,
+      "id": 13,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 32,
       "postId": 39,
       "Parent": "",
       "text": "So exciting!",
-      "dateCommentCreate": 1500961900043,
-      "id": 14
+      "dateCreate": 1500961900043,
+      "dateUpdate": 1500961900043,
+      "id": 14,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 32,
       "postId": 39,
       "Parent": 12,
       "text": "I agree with you :)",
-      "dateCommentCreate": 1500961922578,
-      "id": 15
+      "dateCreate": 1500961922578,
+      "dateUpdate": 1500961922578,
+      "id": 15,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 32,
       "postId": 39,
       "Parent": "",
-      "text": "This comment has been removed.",
-      "dateCommentCreate": 1500961950609,
-      "id": 16
+      "text": "Absolutely agree with you)))",
+      "dateCreate": 1500961950609,
+      "dateUpdate": 1500961950609,
+      "id": 16,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 32,
       "postId": 42,
       "Parent": 13,
       "text": "I hope that very soon!!!",
-      "dateCommentCreate": 1500962005330,
-      "id": 17
+      "dateCreate": 1500962005330,
+      "dateUpdate": 1500962005330,
+      "id": 17,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 32,
       "postId": 44,
       "Parent": "",
       "text": "I love stories about UFOs :)",
-      "dateCommentCreate": 1500962039113,
-      "id": 18
+      "dateCreate": 1500962039113,
+      "dateUpdate": 1500962039113,
+      "id": 18,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 33,
       "postId": 46,
       "Parent": "",
       "text": "So I believed it.... Nobody knows when the second advent will be.",
-      "dateCommentCreate": 1500962561554,
-      "id": 19
+      "dateCreate": 1500962561554,
+      "dateUpdate": 1500962561554,
+      "id": 19,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 34,
       "postId": 46,
       "Parent": 19,
       "text": "And what's so surprising? There are so many people in the world who issue such things.",
-      "dateCommentCreate": 1500962615586,
-      "id": 20
+      "dateCreate": 1500962615586,
+      "dateUpdate": 1500962615586,
+      "id": 20,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 34,
       "postId": 39,
       "Parent": 15,
       "text": "I agree with you too)",
-      "dateCommentCreate": 1500962779058,
-      "id": 21
+      "dateCreate": 1500962779058,
+      "dateUpdate": 1500962779058,
+      "id": 21,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 35,
       "postId": 39,
       "Parent": "",
       "text": "norm))",
-      "dateCommentCreate": 1500981256420,
-      "id": 36
+      "dateCreate": 1500981256420,
+      "dateUpdate": 1500981256420,
+      "id": 36,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 35,
       "postId": 39,
       "Parent": "",
       "text": "hello))",
-      "dateCommentCreate": 1501597375580,
-      "id": 37
+      "dateCreate": 1501597375580,
+      "dateUpdate": 1501597375580,
+      "id": 37,
+      "editmode": false,
+      "isRemoved": false
     },
     {
-      "userId": 34,
+      "userId": 33,
       "postId": 39,
       "Parent": 14,
       "text": "agree",
-      "dateCommentCreate": 1501761538470,
-      "id": 38
+      "dateCreate": 1501761538470,
+      "dateUpdate": 1501761538470,
+      "id": 38,
+      "editmode": false,
+      "isRemoved": false
     },
     {
       "userId": 34,
       "postId": 39,
-      "Parent": 0,
+      "Parent": "",
       "text": "agreeNew",
-      "dateCommentCreate": 1501761549581,
-      "id": 39
+      "dateCreate": 1501761549581,
+      "dateUpdate": 1501761549581,
+      "id": 39,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 57,
+      "Parent": "",
+      "text": "Very interesting!",
+      "dateCreate": 1502196711092,
+      "dateUpdate": 1502196711092,
+      "id": 40,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 33,
+      "postId": 46,
+      "Parent": "",
+      "text": "Very intersting!",
+      "dateCreate": 1502197323075,
+      "dateUpdate": 1502197323075,
+      "id": 41,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 39,
+      "Parent": "",
+      "text": "Very interesting!",
+      "dateCreate": 1502197801399,
+      "dateUpdate": 1502197801399,
+      "id": 42,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 33,
+      "postId": 57,
+      "Parent": "",
+      "text": "Very-very interesting!",
+      "dateCreate": 1502205050286,
+      "dateUpdate": 1502205050286,
+      "id": 43,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 57,
+      "Parent": 43,
+      "text": "Absolutely agree with you)))",
+      "dateCreate": 1502205159824,
+      "dateUpdate": 1502205159824,
+      "id": 44,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 57,
+      "Parent": "",
+      "text": "Excellent! ;)",
+      "dateCreate": 1502206479560,
+      "dateUpdate": 1502206479560,
+      "id": 45,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 57,
+      "Parent": 43,
+      "text": "This comment has been removed.",
+      "dateCreate": 1502206564138,
+      "dateUpdate": 1502206564138,
+      "id": 46,
+      "editmode": false,
+      "isRemoved": true
+    },
+    {
+      "userId": 33,
+      "postId": 57,
+      "Parent": "",
+      "text": "excellent",
+      "dateCreate": 1502206816078,
+      "dateUpdate": 1502206816078,
+      "id": 48,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 56,
+      "Parent": "",
+      "text": "So beautiful!",
+      "dateCreate": 1502281964579,
+      "dateUpdate": 1502281964579,
+      "id": 50,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 57,
+      "Parent": "",
+      "text": "This comment has been removed.",
+      "dateCreate": 1502282610800,
+      "dateUpdate": 1502282610800,
+      "id": 51,
+      "editmode": false,
+      "isRemoved": true
+    },
+    {
+      "userId": 33,
+      "postId": 57,
+      "Parent": "",
+      "text": "normal\ncomment\ngtrhbret\nrthbg",
+      "dateCreate": 1502282631194,
+      "dateUpdate": 1502282631194,
+      "id": 52,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 34,
+      "postId": 57,
+      "Parent": "",
+      "text": "Very interesting!",
+      "dateCreate": 1502283250865,
+      "dateUpdate": "1502874485716",
+      "id": 55,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 35,
+      "postId": 57,
+      "Parent": "",
+      "text": "my new comment",
+      "dateCreate": 1502284834471,
+      "dateUpdate": 1502284834471,
+      "id": 56,
+      "editmode": false,
+      "isRemoved": false
+    },
+    {
+      "userId": 35,
+      "postId": 58,
+      "Parent": "",
+      "text": "Aww yeah!! :)",
+      "dateCreate": 1502796947808,
+      "dateUpdate": 1502796947808,
+      "editmode": false,
+      "id": 59,
+      "isRemoved": false
+    },
+    {
+      "userId": 35,
+      "postId": 58,
+      "Parent": "",
+      "text": "Very funny and ballsy approach to teaching!",
+      "dateCreate": 1502807147767,
+      "dateUpdate": "1502809998138",
+      "editmode": false,
+      "id": 60,
+      "isRemoved": false
+    },
+    {
+      "userId": 36,
+      "postId": 58,
+      "Parent": 59,
+      "text": "That´’s amazing and useful guys, aww Yeeaaaah!",
+      "dateCreate": 1502871979101,
+      "dateUpdate": "1502874170890",
+      "editmode": false,
+      "id": 61,
+      "isRemoved": false
+    },
+    {
+      "userId": 36,
+      "postId": 58,
+      "Parent": 0,
+      "text": "fisrt comment",
+      "dateCreate": 1502875649829,
+      "dateUpdate": 1502875649829,
+      "editmode": false,
+      "id": 62,
+      "isRemoved": false
+    },
+    {
+      "userId": 36,
+      "postId": 58,
+      "Parent": 62,
+      "text": "second",
+      "dateCreate": 1502875657077,
+      "dateUpdate": 1502875657077,
+      "editmode": false,
+      "id": 63,
+      "isRemoved": false
+    },
+    {
+      "userId": 36,
+      "postId": 58,
+      "Parent": 63,
+      "text": "third and gfdvfd",
+      "dateCreate": 1502875665722,
+      "dateUpdate": "1502878122249",
+      "editmode": false,
+      "id": 64,
+      "isRemoved": false
+    },
+    {
+      "userId": 36,
+      "postId": 58,
+      "Parent": 64,
+      "text": "fourth and\nfifth and\nand fbgbbgfgb",
+      "dateCreate": 1502875674049,
+      "dateUpdate": "1502878170702",
+      "editmode": false,
+      "id": 65,
+      "isRemoved": false
+    },
+    {
+      "userId": 35,
+      "postId": 58,
+      "Parent": "",
+      "text": "new root comment",
+      "dateCreate": 1502884383739,
+      "dateUpdate": 1502884383739,
+      "editmode": false,
+      "id": 66,
+      "isRemoved": false
+    },
+    {
+      "userId": 35,
+      "postId": 58,
+      "Parent": 63,
+      "text": "answer to second (1)",
+      "dateCreate": 1502884397761,
+      "dateUpdate": "1502884445100",
+      "editmode": false,
+      "id": 67,
+      "isRemoved": false
+    },
+    {
+      "userId": 35,
+      "postId": 58,
+      "Parent": 67,
+      "text": "normal comment (2)",
+      "dateCreate": 1502884416958,
+      "dateUpdate": "1502884448644",
+      "editmode": false,
+      "id": 68,
+      "isRemoved": false
+    },
+    {
+      "userId": 35,
+      "postId": 58,
+      "Parent": 0,
+      "text": "fvggbvgf",
+      "dateCreate": 1502893930737,
+      "dateUpdate": "1502894157215",
+      "editmode": false,
+      "id": 69
     }
   ],
   "postsTags": [
@@ -569,56 +884,6 @@
       "id": 88
     },
     {
-      "postId": "55",
-      "nameTag": "tags",
-      "id": 89
-    },
-    {
-      "postId": "55",
-      "nameTag": "newtag",
-      "id": 90
-    },
-    {
-      "postId": "55",
-      "nameTag": "newnewnew",
-      "id": 91
-    },
-    {
-      "postId": "55",
-      "nameTag": "newtag",
-      "id": 92
-    },
-    {
-      "postId": "55",
-      "nameTag": "newnewnew",
-      "id": 93
-    },
-    {
-      "postId": "55",
-      "nameTag": "onlyone",
-      "id": 94
-    },
-    {
-      "postId": "55",
-      "nameTag": "tagnewtag",
-      "id": 95
-    },
-    {
-      "postId": "55",
-      "nameTag": "tagnewtag",
-      "id": 96
-    },
-    {
-      "postId": "55",
-      "nameTag": "onlyone",
-      "id": 97
-    },
-    {
-      "postId": "55",
-      "nameTag": "tags",
-      "id": 98
-    },
-    {
       "postId": "50",
       "nameTag": "apologize",
       "id": 99
@@ -712,6 +977,21 @@
       "postId": "57",
       "nameTag": "care",
       "id": 119
+    },
+    {
+      "postId": "58",
+      "nameTag": "languages",
+      "id": 120
+    },
+    {
+      "postId": "58",
+      "nameTag": "english",
+      "id": 121
+    },
+    {
+      "postId": "58",
+      "nameTag": "lingoda",
+      "id": 122
     }
   ]
 }
