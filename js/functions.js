@@ -35,10 +35,12 @@ window.creativeFunctions = window.creativeFunctions || {
 
     //used in vue-application in allPosts.js
     identityPost: function identityPost(i = 0) {
-        var findUserId = JSON.parse(sessionStorage.getItem('userInfo'));
-        if (findUserId == undefined) {
+        var findUserId = userInfoFunctions.getUserInfo();
+
+        if (findUserId == null) {
             return false;
         } else {
+            findUserId = userInfoFunctions.decryptUserInfo(findUserId);
             //check whether the current post belongs to an authorized user in order to either show/hide the delete/edit buttons
             if (i != 0) {
                 return i == findUserId.id;
@@ -48,11 +50,10 @@ window.creativeFunctions = window.creativeFunctions || {
         }
     },
 
-    newPath: function newPath(id=0) {
-        if(id==0){
+    newPath: function newPath(id = 0) {
+        if (id == 0) {
             window.location.href = "post.html?postId=" + creativeConsts.findPostId;
-        }
-        else{
+        } else {
             window.location.href = "post.html?postId=" + id;
         }
     },
@@ -69,4 +70,26 @@ window.creativeFunctions = window.creativeFunctions || {
         var formattedDate = new Date(parseInt(dateUpdate));
         return moment(formattedDate).format('Do MMMM YYYY');
     }
+}
+
+window.userInfoFunctions = window.userInfoFunctions || {
+    
+    setUserInfo: function setUserInfo(userInfo){
+        userInfo = CryptoJS.AES.encrypt(JSON.stringify(userInfo), creativeConsts.cypherPass);
+        sessionStorage.setItem('userInfo', userInfo);
+    },
+    
+    getUserInfo: function getUserInfo(){
+        return sessionStorage.getItem('userInfo');
+    },
+
+    decryptUserInfo: function decryptUserInfo(userInfo) {
+        var bytes = CryptoJS.AES.decrypt(userInfo.toString(), creativeConsts.cypherPass);
+        var userInfoDecrypt = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        return userInfoDecrypt;
+    },
+    
+    removeUserInfo: function removeUserInfo(){
+        sessionStorage.removeItem('userInfo');
+    } 
 }
