@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    if (JSON.parse(sessionStorage.getItem('userInfo')) == undefined) {
+    if (userInfoFunctions.getUserInfo() == null) {
         window.location.href = "error.html";
     }
 

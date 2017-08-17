@@ -177,7 +177,7 @@ $(document).ready(function () {
                                         window.location.reload();
                                     },
                                     data: {
-                                        "text": "This comment has been removed."
+                                        "isRemoved": true
                                     }
                                 });
                             }
@@ -205,18 +205,18 @@ $(document).ready(function () {
                     },
                     methods: {
                         getUserInfo: function () {
-                            var userName = JSON.parse(sessionStorage.getItem('userInfo'));
-                            if (userName != null) {
-                                return userName;
-                            } else {
+                            var userName = userInfoFunctions.getUserInfo();
+                            if (userName == null) {
                                 return {
                                     id: 0
                                 };
+                            } else {
+                                return userInfoFunctions.decryptUserInfo(userName);
                             }
                         },
                         //check whether the user is authorized and if so show form "create comment"
                         isUserLogged: function () {
-                            if (JSON.parse(sessionStorage.getItem('userInfo')) != null) {
+                            if (userInfoFunctions.getUserInfo() != null) {
                                 return true;
                             } else {
                                 return false;

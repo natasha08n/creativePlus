@@ -12,17 +12,17 @@ $(document).ready(function () {
         },
         methods: {
             getUserInfo: function () {
-                var userName = JSON.parse(sessionStorage.getItem('userInfo'));
-                if (userName != undefined) {
-                    return userName;
-                } else {
+                var userInfoCrypt = userInfoFunctions.getUserInfo();
+                if (userInfoCrypt == null) {
                     return {
                         id: 0
-                    };
+                    }
+                } else {
+                    return userInfoFunctions.decryptUserInfo(userInfoCrypt);
                 }
             },
             logout: function () {
-                sessionStorage.removeItem('userInfo');
+                userInfoFunctions.removeUserInfo();
                 window.location.href="index.html";
             }
         }

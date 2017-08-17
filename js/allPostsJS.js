@@ -3,7 +3,7 @@ $(document).on("click", ".modalDeletePostIndex", function () {
 });
 
 $(document).ready(function () {
-    if (JSON.parse(sessionStorage.getItem('userInfo')) == undefined && creativeFunctions.getParameterByName('userId')) {
+    if (userInfoFunctions.getUserInfo() == null && creativeFunctions.getParameterByName('userId')) {
         window.location.href = "error.html";
     }
 

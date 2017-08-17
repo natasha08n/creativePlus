@@ -34,45 +34,45 @@ window.postFunctions = window.postFunctions || {
     },
 
     makePost: function makePost() {
-        if(JSON.parse(sessionStorage.getItem('userInfo'))!=null){
-            var userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-        }
-        else{
+        var userInfo = userInfoFunctions.getUserInfo();
+        if (userInfo == null) {
             alert("Please, login!");
-        }
-        //read the data from inputs
-        var title = app.title;
-        var subtitle = app.subtitle;
-
-        var text = app.text;
-
-        var date = new Date();
-        date = date.valueOf();
-
-        var newTags = $("#tag").tagging("getTags");
-
-        if (title == "" || subtitle == "" || text == "" || newTags == "") {
-            alert("Fill in all fields!");
         } else {
-            //write the post
-            jQuery.post(creativeConsts.baseUrl + "posts", {
-                "userId": userInfo.id,
-                "title": title,
-                "subtitle": subtitle,
-                "text": text,
-                "datePostCreate": date,
-                "datePostUpdate": date,
-                "photoPost": creativeConsts.photo
-            })
-            .done(function (postdata) { //write the data about new post in SessionStorage
-                postFunctions.saveTags(postdata.id, newTags, function (index) {
-                    window.location.href = "indexOnePost.html?postId=" + index;
-                });
-            })
-            .fail(function(error){
-                console.log("Post error", error);
-                alert("Sorry, we couldn't save your post. Try again.");
-            })
+            userInfo = userInfoFunctions.decryptUserInfo(userInfo);
+            //read the data from inputs
+            var title = app.title;
+            var subtitle = app.subtitle;
+
+            var text = app.text;
+
+            var date = new Date();
+            date = date.valueOf();
+
+            var newTags = $("#tag").tagging("getTags");
+
+            if (title == "" || subtitle == "" || text == "" || newTags == "") {
+                alert("Fill in all fields!");
+            } else {
+                //write the post
+                jQuery.post(creativeConsts.baseUrl + "posts", {
+                        "userId": userInfo.id,
+                        "title": title,
+                        "subtitle": subtitle,
+                        "text": text,
+                        "datePostCreate": date,
+                        "datePostUpdate": date,
+                        "photoPost": creativeConsts.photo
+                    })
+                    .done(function (postdata) { //write the data about new post in SessionStorage
+                        postFunctions.saveTags(postdata.id, newTags, function (index) {
+                            window.location.href = "indexOnePost.html?postId=" + index;
+                        });
+                    })
+                    .fail(function (error) {
+                        console.log("Post error", error);
+                        alert("Sorry, we couldn't save your post. Try again.");
+                    })
+            }
         }
     },
 
@@ -80,14 +80,14 @@ window.postFunctions = window.postFunctions || {
         //read the data from inputs
         var title = jQuery("#title").val();
         var subtitle = jQuery("#subtitle").val();
-        
+
         var text = jQuery("#text").val();
-        
+
         var date = new Date();
         date = date.valueOf();
-        
+
         var newTags = $("#tag").tagging("getTags");
-        
+
         var photoOld;
 
         $.ajax({
@@ -135,7 +135,7 @@ window.postFunctions = window.postFunctions || {
             success: function (result) {
                 window.location.href = "index.html";
             },
-            error: function(error){
+            error: function (error) {
                 alert("We couldn't delete your post.Please,try again!");
                 console.log(error);
             }
@@ -143,7 +143,7 @@ window.postFunctions = window.postFunctions || {
     },
 
     //delete tags
-   deleteTags: function deleteTags(postId, callback) {
+    deleteTags: function deleteTags(postId, callback) {
         var check = 0;
         $.ajax({
             url: creativeConsts.baseUrl + "postsTags?postId=" + postId,
@@ -167,7 +167,7 @@ window.postFunctions = window.postFunctions || {
             }
         });
     },
-    
+
     //create or edit tags
     saveTags: function saveTags(postIndex, arrayTags, callback) {
         var check = 0;
@@ -194,7 +194,9 @@ window.postFunctions = window.postFunctions || {
 
     createNewComment: function createNewComment() {
         var text = $('#textComment').val();
-        var userCurrentId = JSON.parse(sessionStorage.getItem('userInfo'));
+
+        var userCurrentId = userInfoFunctions.getUserInfo();
+        userCurrentId = userInfoFunctions.decryptUserInfo(userCurrentId);
 
         var dateComment = new Date();
         dateComment = dateComment.valueOf();
@@ -202,8 +204,7 @@ window.postFunctions = window.postFunctions || {
         if (text == "") {
             alert("Fill in textarea!");
         } else {
-            $.postJson(creativeConsts.baseUrl + "comments",
-                {
+            $.postJson(creativeConsts.baseUrl + "comments", {
                     "userId": userCurrentId.id,
                     "postId": creativeConsts.findPostId,
                     "Parent": parentCommentId,
@@ -216,16 +217,14 @@ window.postFunctions = window.postFunctions || {
                     window.location.reload();
                     //$('#commentTree').html()
                 })
-                .fail(function(error){
-                    if(JSON.parse(sessionStorage.getItem('userInfo'))==undefined){
+                .fail(function (error) {
+                    if (sessionStorage.getItem('userInfo') == null) {
                         alert("Please, login");
-                    }
-                    else{
+                    } else {
                         console.log(error);
                         alert("Please, try again.");
                     }
-                }
-            );
+                });
         }
     }
 }

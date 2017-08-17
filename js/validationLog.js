@@ -28,16 +28,15 @@ $(document).ready(function () {
                         function (data) {
                             if (data.length > 0) {
                                 var userInfo = {};
-                                userInfo={
+                                userInfo = {
                                     id: data[0].id,
                                     login: data[0].login
                                 };
-                                //userInfo=session_decode(userInfo);
+
+                                userInfoFunctions.setUserInfo(userInfo); 
                                 
-                                sessionStorage.setItem('userInfo', JSON.stringify(userInfo));
                                 location.reload();
-                            }
-                            else{
+                            } else {
                                 alert("There is no such user in the database!")
                             }
                         }
