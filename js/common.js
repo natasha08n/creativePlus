@@ -14,7 +14,7 @@ $(document).ready(function () {
             getUserInfo: function () {
                 var userName = JSON.parse(sessionStorage.getItem('userInfo'));
                 if (userName != undefined) {
-                    return userName[0];
+                    return userName;
                 } else {
                     return {
                         id: 0
