@@ -1,10 +1,12 @@
 var parentCommentId = 0;
 var parentCommentLogin = "";
 
+var app;
+
 //one post
 $(document).ready(function () {
     //write "" so that when the page is loading, there is no {{title}}
-    var app = new Vue({
+    app = new Vue({
         el: '#app',
         data: {
             show: true,
@@ -18,9 +20,7 @@ $(document).ready(function () {
             //tags: []
         },
         methods: {
-            newPath: function () {
-                window.location.href = "post.html?postId=" + creativeConsts.findPostId;
-            },
+            newPath: creativeFunctions.newPath,
             identityPost: creativeFunctions.identityPost,
             editOrCreate: function () {
                 if (creativeFunctions.getParameterByName('postId') != null) {
@@ -52,17 +52,17 @@ $(document).ready(function () {
         }
     );
 
+    //get tags from DB to edit them
     jQuery.get(
         creativeConsts.baseUrl + "postsTags?postId=" + creativeConsts.findPostId, {},
         function (foundedTags) {
             if (foundedTags.length > 0) {
-                var newStringTags = "";
                 var tagsArray = [];
 
                 foundedTags.forEach(function (item) {
                     tagsArray.push(item.nameTag);
                 });
-                app.tags=tagsArray;
+                app.tags = tagsArray;
 
                 var t, $tag_box;
                 $("#tag").tagging("add", app.tags);
@@ -78,22 +78,23 @@ $(document).ready(function () {
                 for (var i = 0; i < comments.length; i++) {
                     //create a new field for the username
                     comments[i].loginUser = comments[i].user.login;
-                    
-                    comments[i].dateCommentCreate = creativeFunctions.dateFormat(comments[i].dateCommentCreate, 1);
-                    
-                    comments[i].dateCommentCreate = moment(comments[i].dateCommentCreate, "DD.MM.YYYY, h:mm:ss").fromNow();
+
+                    comments[i].dateCreate = moment(comments[i].dateCreate).fromNow();
 
                     comments[i].userAuthor = "";
+
                     (function (oneComment) {
-                        $.getJSON(creativeConsts.baseUrl + "comments/" + oneComment.Parent, function (findComment) {
-                            if (findComment.length > 1) {
-                                oneComment.userAuthor = "";
-                            } else {
-                                $.getJSON(creativeConsts.baseUrl + "users/" + findComment.userId, function (findUser) {
-                                    oneComment.userAuthor = "to " + findUser.login;
-                                });
-                            }
-                        });
+                        if (oneComment.Parent != 0) {
+                            $.getJSON(creativeConsts.baseUrl + "comments/" + oneComment.Parent, function (findComment) {
+                                if (findComment.length > 1) {
+                                    oneComment.userAuthor = "";
+                                } else {
+                                    $.getJSON(creativeConsts.baseUrl + "users/" + findComment.userId, function (findUser) {
+                                        oneComment.userAuthor = findUser.login;
+                                    });
+                                }
+                            });
+                        }
                     })(comments[i]);
                 }
 
@@ -130,36 +131,63 @@ $(document).ready(function () {
                             }
                         },
                         addChild: function () {
+                            $('.parentLoginText').css("display", "inline-block");
+                            
                             //save comment id in parentCommentId
                             parentCommentId = this.model.value.id;
-                            this.userAnswered();
+
+                            this.saveLoginAuthor();
+                            
                             $(this).addClass('active');
                             $('body,html').animate({
                                 scrollTop: $('#appIsLogged').position().top + 70
                             }, 400);
-
                         },
-                        //function only replace the main text of the comment with the text "This comment has been removed."
-                        deleteComment: function () {
-                            //save comment id in the variable commentId
-                            var commentId = this.model.value.id;
+                        edit: function () {
+                            this.model.value.editmode = true;
+                        },
+                        save: function () {
+                            this.model.value.editmode = false;
+
+                            var dateUpdate = new Date();
+                            dateUpdate = dateUpdate.valueOf();
+
                             $.ajax({
-                                url: creativeConsts.baseUrl + "comments/" + commentId,
-                                type: 'PATCH',
-                                success: function (result) {
-                                    window.location.reload();
-                                },
+                                type: "PATCH",
+                                url: creativeConsts.baseUrl + "comments/" + this.model.value.id,
                                 data: {
-                                    "text": "This comment has been removed."
+                                    "text": this.model.value.text,
+                                    "dateUpdate": dateUpdate
+                                },
+                                error: function () {
+                                    alert("Please, try again to edit your comment.");
                                 }
                             });
                         },
-                        userAnswered: function () {
-                            //save the comment's author login in the variable parentCommentLogin 
-                            return parentCommentLogin = this.model.value.loginUser;
+                        //function only replace the main text of the comment with the text "This comment has been removed."
+                        deleteComment: function () {
+                            var result = confirm("Are you sure to delete the comment?");
+                            if (result) {
+                                //save comment id in the variable commentId
+                                var commentId = this.model.value.id;
+                                $.ajax({
+                                    url: creativeConsts.baseUrl + "comments/" + commentId,
+                                    type: 'PATCH',
+                                    success: function (result) {
+                                        window.location.reload();
+                                    },
+                                    data: {
+                                        "text": "This comment has been removed."
+                                    }
+                                });
+                            }
+                        },
+                        saveLoginAuthor: function () {
+                            //save the comment's author login
+                            return this.$root.login = this.model.value.loginUser;
                         }
                     }
-                })
+                });
 
                 // boot up the demo
                 var demo = new Vue({
@@ -169,7 +197,8 @@ $(document).ready(function () {
                         userInfo: {
                             id: 0
                         },
-                        treeData: data
+                        treeData: data,
+                        login: ""
                     },
                     mounted: function () {
                         this.userInfo = this.getUserInfo();
@@ -177,35 +206,31 @@ $(document).ready(function () {
                     methods: {
                         getUserInfo: function () {
                             var userName = JSON.parse(sessionStorage.getItem('userInfo'));
-                            if (userName[0] != null) {
-                                return userName[0];
+                            if (userName != null) {
+                                return userName;
                             } else {
                                 return {
                                     id: 0
                                 };
                             }
+                        },
+                        //check whether the user is authorized and if so show form "create comment"
+                        isUserLogged: function () {
+                            if (JSON.parse(sessionStorage.getItem('userInfo')) != null) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        },
+                        deleteParentComment: function(){
+                            if(confirm("Don't want to reply "+ this.login + "?")){
+                                parentCommentId="";
+                                document.getElementById('textForParentLogin').innerHTML="You don't answer to anybody. You only write a comment.";
+                                $('#parentLogin').css("display", "none");   
+                            }
                         }
                     }
                 });
-
-
             }
         });
-});
-
-//check whether the user is authorized and if so show form "create comment"
-var appIsLogged = new Vue({
-    el: '#appIsLogged',
-    data: {
-        show: true
-    },
-    methods: {
-        isUserLogged: function () {
-            if (JSON.parse(sessionStorage.getItem('userInfo')) != null) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
 });
