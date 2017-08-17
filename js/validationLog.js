@@ -27,11 +27,13 @@ $(document).ready(function () {
                         },
                         function (data) {
                             if (data.length > 0) {
-                                var userInfo = [];
-                                userInfo.push({
+                                var userInfo = {};
+                                userInfo={
                                     id: data[0].id,
                                     login: data[0].login
-                                });
+                                };
+                                //userInfo=session_decode(userInfo);
+                                
                                 sessionStorage.setItem('userInfo', JSON.stringify(userInfo));
                                 location.reload();
                             }
