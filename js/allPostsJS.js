@@ -1,3 +1,7 @@
+$(document).on("click", ".modalDeletePostIndex", function () {
+    creativeConsts.findPostId = $(this).data('id');
+});
+
 $(document).ready(function () {
     if (JSON.parse(sessionStorage.getItem('userInfo')) == undefined && creativeFunctions.getParameterByName('userId')) {
         window.location.href = "error.html";
@@ -28,6 +32,7 @@ $(document).ready(function () {
                 window.location.href = "indexOnePost.html?postId=" + postId;
             },
             identityPost: creativeFunctions.identityPost,
+            newPath: creativeFunctions.newPath,
             postsExist: function () {
                 return this.posts.length;
             },
@@ -72,7 +77,7 @@ $(document).ready(function () {
 
             },
             getTotalPages: function () {
-                if (creativeFunctions.getParameterByName('userId') == null) {
+                if (creativeFunctions.getParameterByName('userId') == undefined) {
                     url = creativeConsts.baseUrl + "posts";
                 } else {
                     url = creativeConsts.baseUrl + "posts?userId=" + creativeFunctions.getParameterByName('userId');
