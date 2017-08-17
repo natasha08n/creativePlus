@@ -79,12 +79,12 @@
                     <h2 v-else>Create Post</h2>
                     <label for="title">Post Title<span>*</span></label>
                     <br>
-                    <input id="title" type="text" v-bind:value="title" />
+                    <input id="title" type="text" v-model="title" />
                     <br>
 
                     <label for="subtitle">Post Subtitle</label>
                     <br>
-                    <input id="subtitle" type="text" v-bind:value="subtitle" />
+                    <input id="subtitle" type="text" v-model="subtitle" />
                     <br>
 
                     <label for="tag" class="control-label">Tags</label>
@@ -98,7 +98,7 @@
 
                     <label for="text">Post Text</label>
                     <br>
-                    <textarea id="text" rows="6" maxlength="10000" v-bind:value="text"></textarea>
+                    <textarea id="text" rows="6" maxlength="10000" v-model="text"></textarea>
                     <br>
 
                     <div class="card">
