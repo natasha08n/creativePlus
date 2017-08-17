@@ -154,11 +154,11 @@
     },
     {
       "userId": "34",
-      "title": "Membership for Individuals",
+      "title": "Our Membership for Individuals",
       "subtitle": "Membership for Individuals",
       "text": "Members of the Early English Text Society receive each year the editions published by the Society in the Ordinary Series for that year. Usually, there are two publications each year, though not always so. Individual members of the Society, but not institutions, who would prefer not to receive the new publications may instead substitute any past volumes from the Society's list which are currently in print up to the value of £60.00 or $120, depending which currency one has paid the subscription in. (Each new year's subscription accrues a new credit against the back-list.) Members also receive a copy of the Society's brief annual report and the Society's accounts. Very occasionally, extra books are published in the Supplementary Series; those volumes are not sent to members in return for their annual subscription but they are available to members at a reduced pre-publication price; a notice about each volume is sent to members in advance of publication.\n\nThe subscription to the Society is £30.00 or US$60.00. Individual members can pay subscriptions in three ways: by PayPal, from links on this webpage, by credit or debit card, or by a cheque in pounds sterling made out to 'The Early English Text Society', and sent to the Membership Secretary. Please use the PayPal buttons and the forms below.\n\nPayment by PayPal\nThe easiest way for individuals to pay their subscription is by PayPal using the buttons on this page. You can sign up to pay a subscription annually or just this once. PayPal will allow you to pay using your credit or debit card, or to pay with your own PayPal account, should you have one. PayPal gives you the opportunity to specify a separate 'dispatch address', if you would like your books posted to an address different from that of your registered credit card or PayPal account. Please do remember to specify which address to use.\n\nIf you wish to pay a recurring annual subscription on the same date each year, please use one of these two buttons, in pounds sterling or in US dollars. This payment will continue annually until you cancel it.",
       "datePostCreate": "1500975258743",
-      "datePostUpdate": "1500975258743",
+      "datePostUpdate": "1502971769591",
       "photoPost": "https://res.cloudinary.com/creativeplus/image/upload/v1500975246/yvcw9msbeowm9cnb7h4t.jpg",
       "id": 49
     },
@@ -630,6 +630,48 @@
       "dateUpdate": "1502894157215",
       "editmode": false,
       "id": 69
+    },
+    {
+      "userId": 34,
+      "postId": 49,
+      "Parent": 0,
+      "text": "ghvghfgf",
+      "dateCreate": 1502971830618,
+      "dateUpdate": 1502971830618,
+      "editmode": false,
+      "id": 70
+    },
+    {
+      "userId": 34,
+      "postId": 49,
+      "Parent": 70,
+      "text": "This comment has been removed.",
+      "dateCreate": 1502972232816,
+      "dateUpdate": 1502972232816,
+      "editmode": false,
+      "id": 71,
+      "isRemoved": "true"
+    },
+    {
+      "userId": 34,
+      "postId": 49,
+      "Parent": "",
+      "text": "bgfbfdsbrt44QQQ",
+      "dateCreate": 1502972241829,
+      "dateUpdate": "1502972249389",
+      "editmode": false,
+      "id": 72
+    },
+    {
+      "userId": 34,
+      "postId": 58,
+      "Parent": 65,
+      "text": "свмва",
+      "dateCreate": 1502978060529,
+      "dateUpdate": 1502978060529,
+      "editmode": false,
+      "id": 73,
+      "isRemoved": "true"
     }
   ],
   "postsTags": [
@@ -839,21 +881,6 @@
       "id": 67
     },
     {
-      "postId": "49",
-      "nameTag": "membership",
-      "id": 68
-    },
-    {
-      "postId": "49",
-      "nameTag": "subscription",
-      "id": 69
-    },
-    {
-      "postId": "49",
-      "nameTag": "people",
-      "id": 70
-    },
-    {
       "postId": "54",
       "nameTag": "mirande",
       "id": 83
@@ -992,6 +1019,21 @@
       "postId": "58",
       "nameTag": "lingoda",
       "id": 122
+    },
+    {
+      "postId": "49",
+      "nameTag": "membership",
+      "id": 123
+    },
+    {
+      "postId": "49",
+      "nameTag": "subscription",
+      "id": 124
+    },
+    {
+      "postId": "49",
+      "nameTag": "people",
+      "id": 125
     }
   ]
 }
