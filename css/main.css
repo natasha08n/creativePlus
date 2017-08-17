@@ -150,7 +150,6 @@ div.description p {
     background-color: white;
     border: 1px solid #ccc;
     padding: 7px;
-    
     min-height: 200px;
 }
 
@@ -273,6 +272,7 @@ div.description p {
 
 .postText {
     word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 
@@ -460,6 +460,9 @@ ul#commentUl li {
     cursor: default;
 }
 
+.comment-edit-text{
+    margin-top: 10px;
+}
 
 /*styles for one post*/
 
@@ -520,7 +523,8 @@ ul.menuForPost {
 
 .menuForPost li a:hover,
 .socialForPost li a:hover,
-.socialForIndexPost li a:hover {
+.socialForIndexPost li a:hover,
+ul.iconsForEditPost li a:hover{
     background-color: #666;
     transition: all .7s ease;
 }
@@ -570,6 +574,35 @@ ul.socialForIndexPost li:last-child {
     /*    z-index: 9999;*/
 }
 
+.iconsEditPost{
+    position: absolute;
+    right: 18px;
+    top: 18px;
+}
+
+ul.iconsForEditPost li{
+    list-style-type: none;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+ul.iconsForEditPost li:last-child{
+    margin-bottom: 0;
+}
+
+ul.iconsForEditPost li a{
+    font-size: 16px;
+    background-color: #f27255;
+    border-radius: 50%;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all .7s ease;
+}
 
 /*styles for the display of icons when hovering the mouse*/
 
@@ -610,7 +643,7 @@ div.editPost {
 
 .createPost input[type="text"],
 .editPost input[type="text"],
-.inputTags{
+.inputTags {
     outline: none;
     width: 50%;
     padding: 5px;
@@ -699,6 +732,7 @@ textarea.commnet-create-text {
 
 
 /*styles for count comments*/
+
 .post-img {
     position: relative;
 }
@@ -716,6 +750,7 @@ textarea.commnet-create-text {
 
 
 /*leftSocial*/
+
 ul.leftSocial {
     position: fixed;
     left: -15px;
@@ -779,33 +814,92 @@ ul {
     padding-bottom: 10px;
 }
 
+.userAuthor {
+    color: #f27255;
+    font-weight: bold;
+}
+
+.commentText{
+    white-space: pre-wrap;
+}
+
+.commentText:focus,
+.commentText:active {
+    outline: 0;
+    outline-offset: 0;
+    outline-width: 0;
+}
+
 .btn-delete,
-.btn-add {
-    margin-left: 20px;
+.btn-add{
     color: white;
     background-color: #f27255;
     transition: background .4s linear;
     border-radius: 4px;
     border: none;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding: 5px;
 }
 
-.btn-delete:hover {
-    background-color: #ca3c20;
-    transition: all .6s linear;
+ul.commentsButtons{
+    opacity: 0.5;
+    /*display: none;*/
+    display: inline-block;
+    transition: all .3s linear;
 }
 
-.btn-add {
+/*.itemText:hover ul.commentsButtons{
+    /*display:block;
+    transition: all .3s linear;
+}*/
+
+ul.commentsButtons li{
+    list-style-type: none;
+    float: left;
+    padding-left: 5px;
+}
+
+ul.commentsButtons li:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+ul.commentsButtons li a{
     color: #666;
+    text-decoration: none;
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s linear;
     margin-top: 7px;
-    background-color: #ddd;
+    background-color: #ebebeb;
 }
 
-.btn-add:hover {
+ul.commentsButtons .btn-delete{
+    color: white;
+    background-color: #f27255;
+}
+
+.btn-add:hover,
+ul.commentsButtons li a:hover{
     color: #666;
     background-color: #b9b9b9;
     transition: all .6s linear;
+}
+
+ul.commentsButtons .btn-delete:hover {
+    background-color: #ca3c20;
+    color: #ddd;
+    transition: all .6s linear;
+}
+
+ul.commentsButtons:hover{
+    opacity: 1;
+    transition: opacity .4s linear;
 }
 
 .deleted-comment {
@@ -813,8 +907,41 @@ ul {
     opacity: .5;
 }
 
+.commentTextDiv{
+    display: inline-block;
+}
+
+.parentLoginText{
+    padding-bottom: 20px;
+    display: none;
+}
+
+.parentLogin{
+    color: white;
+    font-weight: 400;
+    background-color: rgba(242, 114, 85, 0.87);
+    padding: 5px;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.deleteCommentAuthor{
+    font-size: 12px;
+    color: #333;
+    opacity: 0.4;
+    font-weight: 600;
+    padding-left: 5px;
+    cursor: pointer;
+    transition: color .3s linear;
+}
+
+.deleteCommentAuthor:hover{
+    transition: opacity .3s linear;
+    opacity: 1;
+}
 
 /*new style*/
+
 ul.new-nav li a:hover,
 .post img:hover {
     cursor: pointer;
@@ -822,7 +949,8 @@ ul.new-nav li a:hover,
 
 
 /* pagination */
-.pagination__mid ul li{
+
+.pagination__mid ul li {
     display: inline-block;
     list-style-type: none;
 }
@@ -830,12 +958,12 @@ ul.new-nav li a:hover,
 div.pagination__left,
 div.pagination__right,
 div.pagination__mid,
-div.pagination__mid ul{
+div.pagination__mid ul {
     text-align: center;
 }
 
 div.pagination__left a,
-div.pagination__right a{
+div.pagination__right a {
     background-color: #f27255;
     text-decoration: none;
     padding: 8px 20px;
@@ -845,7 +973,7 @@ div.pagination__right a{
     transition: all .5s linear;
 }
 
-div.pagination__mid a{
+div.pagination__mid a {
     background-color: #f27255;
     padding: 5px 10px;
     border-radius: 4px;
@@ -860,40 +988,44 @@ div.pagination__mid a{
 
 div.pagination__left a:hover,
 div.pagination__right a:hover,
-div.pagination__mid a:hover{
+div.pagination__mid a:hover {
     background-color: #ca3c20;
     transition: all .5s linear;
 }
 
-div.pagination__mid a.current{
+div.pagination__mid a.current {
     background-color: #ca3c20;
 }
 
+
 /*styles for tags*/
-.inputTags{
+
+.inputTags {
     width: 100%;
 }
-.tagging{
+
+.tagging {
     padding: 5px;
 }
-.tag{
+
+.tag {
     background-color: #f27255;
     margin: 5px 10px 5px 0;
 }
 
-.tag span{
+.tag span {
     background-color: #d8563d;
     padding: 8px 10px 8px;
     color: #ffdbd5;
 }
 
-.tag .tag-i{
+.tag .tag-i {
     color: #ffdbd5;
     font-size: 1.1em;
     font-weight: bold;
 }
 
-.tag .tag-i:hover{
+.tag .tag-i:hover {
     color: #333;
     text-decoration: none;
 }
