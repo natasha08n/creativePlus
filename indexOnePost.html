@@ -111,14 +111,66 @@
                             <div v-if="model.value.id!=0" :class="{bold: isFolder}">
                                 <img src="img/user.png" alt="user" class="img-responsive img-user">
                                 <div class="itemText">
-                                    <span id="userName">{{model.value.loginUser}}</span> &nbsp;
-                                    <span>{{model.value.userAuthor}}</span> &nbsp;
-                                    <em>{{model.value.dateCommentCreate}}</em>
-                                    <input type="button" class="add btn-add" @click="addChild" v-if="this.$root.userInfo.id && model.value.text!='This comment has been removed.'" value="Reply">
-                                    <input type="button" class="btn-delete" value="Delete" v-if="this.$root.userInfo.id==model.value.userId && model.value.text!='This comment has been removed.'" v-on:click="deleteComment()">
+                                    <span id="userName">{{model.value.loginUser}}</span>
+                                    &nbsp;
+                                    <span v-if="model.value.userAuthor">to</span>
+                                    &nbsp;
+                                    <span class="userAuthor">{{model.value.userAuthor}}</span>
+                                    &nbsp;
+                                    <em>{{model.value.dateCreate}}</em>
+
+                                    <ul class="commentsButtons">
+                                        <li>
+                                            <a @click="addChild"
+                                                v-if="this.$root.userInfo.id && !model.value.isRemoved">
+                                                    <i class="fa fa-reply-all" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="edit"
+                                                @click="edit"
+                                                v-if="this.$root.userInfo.id==model.value.userId && !model.value.isRemoved && !model.value.editmode">
+                                                    <i class="glyphicon glyphicon-pencil"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="save"
+                                                @click="save"
+                                                v-if="this.$root.userInfo.id==model.value.userId && !model.value.isRemoved && model.value.editmode">
+                                                    <i class="glyphicon glyphicon-floppy-save"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="btn-delete"
+                                                v-on:click="deleteComment()"
+                                                v-if="this.$root.userInfo.id==model.value.userId && !model.value.isRemoved">
+                                                    <i class="glyphicon glyphicon-remove"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+
                                     <br>
-                                    <span class="deleted-comment" v-if="model.value.text=='This comment has been removed.'" @click="toggle">{{model.value.text}}</span>
-                                    <span v-else @click="toggle">{{model.value.text}}</span>
+                                    <div v-show="model.value.isRemoved" class="commentTextDiv">
+                                        <span class="deleted-comment" @click="toggle">This comment has been removed.</span>
+                                    </div>
+
+                                    <div v-if="!model.value.isRemoved" class="commentTextDiv">
+                                        <span v-show="model.value.editmode" class="commentText">
+                                            <textarea
+                                                v-model="model.value.text"
+                                                rows="3"
+                                                cols="75"
+                                                maxlength="1000"
+                                                class="comment-edit-text"
+                                                wrap="soft">
+                                            </textarea>
+                                        </span>
+                                        <span v-show="!model.value.editmode" @click="toggle" class="commentText">{{model.value.text}}</span>
+                                    </div>
+
                                     <span v-if="isFolder" @click="toggle">[{{open ? '-' : '+'}}]</span>
                                 </div>
                             </div>
@@ -136,8 +188,11 @@
                     <!--form for creation new comment-->
                     <div class="createСomment" v-if="isUserLogged()==true" id="appIsLogged">
                         <h2>Create Comment</h2>
-                        <br>
-                        <textarea id="textComment" rows="6" maxlength="1000" class="commnet-create-text"></textarea>
+                        <div class="parentLoginText">
+                            <span id="textForParentLogin">Your write an answer to </span>
+                            <span class="parentLogin" id="parentLogin">{{login}} <sup @click="deleteParentComment" class="deleteCommentAuthor">x</sup></span>
+                        </div>
+                        <textarea id="textComment" rows="6" maxlength="1000" class="commnet-create-text" wrap="soft"></textarea>
                         <br>
 
                         <input class="btn-join btn-foo btn-create-comment" type="button" onclick="postFunctions.createNewComment()" value="Add Comment" />
@@ -342,7 +397,7 @@
 
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    
+
     <!--main js-->
     <script src="js/functions.js"></script>
     <script src="js/variables.js"></script>
@@ -360,7 +415,7 @@
 
     <!--arrow up and navbar script for different users-->
     <script type="text/javascript" src="js/common.js"></script>
-    
+
     <!--tags-->
     <script src="js/tagging.min.js"></script>
 </body>
