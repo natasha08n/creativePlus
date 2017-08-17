@@ -76,7 +76,7 @@
 
 
     <div class="container">
-       <div class="row">
+        <div class="row">
             <!--pagination tepmplate for div with id="appPosts" (it is located below)-->
             <template id="pagination-template">
                 <div class="pagination">
@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </template>
-       </div>
+        </div>
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="appPosts">
 
@@ -125,6 +125,12 @@
                         <div class="countComments" v-if="item.commentsCount==0">No Comments</div>
                         <div class="countComments" v-else-if="item.commentsCount==1">1 Comment</div>
                         <div class="countComments" v-else>{{item.commentsCount}} Comments</div>
+                        <div v-if="identityPost(item.userId)" class="iconsEditPost">
+                            <ul class="iconsForEditPost">
+                                <li><a v-on:click="newPath(item.id)"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                                <li><a data-toggle="modal" data-target="#modalDelete" :data-id="item.id" class="modalDeletePostIndex"><span class="glyphicon glyphicon-remove"></span></a></li>
+                            </ul>
+                        </div>
                         <div class="socialIndexPost">
                             <ul class="socialForIndexPost">
                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -143,15 +149,9 @@
                     </div>
                 </div>
 
-               <!--our pagination component-->
-               <!--start method fetchPhotos (method for uploading posts) with the help of our created event @page-changed (with $emit)-->
-                <pagination
-                    :current="currentPage"
-                    :total="totalPosts"
-                    :perPage="perPage"
-                    @page-changed="fetchPosts"
-                    class="center-block"
-                ></pagination>
+                <!--our pagination component-->
+                <!--start method fetchPhotos (method for uploading posts) with the help of our created event @page-changed (with $emit)-->
+                <pagination :current="currentPage" :total="totalPosts" :perPage="perPage" @page-changed="fetchPosts" class="center-block"></pagination>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -353,7 +353,28 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+    </div>
+    
+    <!--modal window for deleting a post-->
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Delete a post</h4>
+                </div>
+                <div class="modal-body">
+                    <p><b>Are you sure to delete the post?</b></p>
+                    <p><em>Tags and comments will be deleted as well.<br>After the post is removed, you will be redirected to the personal account page.</em></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-join" data-dismiss="modal" onclick="postFunctions.deletePost()">Yes, I am sure</button>
+                    <button type="button" class="btn-join btn-foo btn-create-post" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -361,20 +382,22 @@
     <a id="go-to-top" href="#home" class="btn-md btn-lg go-to-top" role="button" title="Вверх">
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
-    
+
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/moment.min.js"></script>
-    
+
     <!--main js-->
     <script src="js/functions.js"></script>
     <script src="js/variables.js"></script>
+    <script src="js/postFunctions.js"></script>
 
     <!--for pagination-->
-    <script src="js/vue-resource.min.js"></script><!-- plugin for pagination -->
+    <script src="js/vue-resource.min.js"></script>
+    <!-- plugin for pagination -->
     <script src="js/pagination.js"></script>
 
-    
+
     <script src="js/allPostsJS.js"></script>
 
     <!--sign in-->
