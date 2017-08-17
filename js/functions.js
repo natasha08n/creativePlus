@@ -12,7 +12,8 @@ $["postJson"] = function (url, data, callback) {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: JSON.stringify(data),
-        success: callback
+        success: callback,
+        error: callback
     });
 };
 
@@ -33,30 +34,39 @@ window.creativeFunctions = window.creativeFunctions || {
     },
 
     //used in vue-application in allPosts.js
-    identityPost: function identityPost() {
+    identityPost: function identityPost(i = 0) {
         var findUserId = JSON.parse(sessionStorage.getItem('userInfo'));
         if (findUserId == undefined) {
             return false;
         } else {
             //check whether the current post belongs to an authorized user in order to either show/hide the delete/edit buttons
-            return this.authorId == findUserId[0].id;
+            if (i != 0) {
+                return i == findUserId.id;
+            } else {
+                return this.authorId == findUserId.id;
+            }
         }
     },
-    
-    cropText: function cropText(text, length){
-        if(text.length <= length)
+
+    newPath: function newPath(id=0) {
+        if(id==0){
+            window.location.href = "post.html?postId=" + creativeConsts.findPostId;
+        }
+        else{
+            window.location.href = "post.html?postId=" + id;
+        }
+    },
+
+    cropText: function cropText(text, length) {
+        if (text.length <= length)
             return text;
         else
             return text.substring(0, length) + '. . .';
     },
-    
+
     //change date format
-    dateFormat: function dateFormat(dateUpdate, parameter=0){
+    dateFormat: function dateFormat(dateUpdate) {
         var formattedDate = new Date(parseInt(dateUpdate));
-        if(parameter==0){
-            return moment(formattedDate).format('Do MMMM YYYY');
-        }
-        else
-            return moment(formattedDate).format('DD.MM.YYYY, h:mm:ss');
+        return moment(formattedDate).format('Do MMMM YYYY');
     }
 }

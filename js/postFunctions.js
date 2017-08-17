@@ -34,11 +34,17 @@ window.postFunctions = window.postFunctions || {
     },
 
     makePost: function makePost() {
+        if(JSON.parse(sessionStorage.getItem('userInfo'))!=null){
+            var userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+        }
+        else{
+            alert("Please, login!");
+        }
         //read the data from inputs
-        var title = jQuery("#title").val();
-        var subtitle = jQuery("#subtitle").val();
+        var title = app.title;
+        var subtitle = app.subtitle;
 
-        var text = jQuery("#text").val();
+        var text = app.text;
 
         var date = new Date();
         date = date.valueOf();
@@ -50,18 +56,23 @@ window.postFunctions = window.postFunctions || {
         } else {
             //write the post
             jQuery.post(creativeConsts.baseUrl + "posts", {
-                "userId": JSON.parse(sessionStorage.getItem('userInfo'))[0].id,
+                "userId": userInfo.id,
                 "title": title,
                 "subtitle": subtitle,
                 "text": text,
                 "datePostCreate": date,
                 "datePostUpdate": date,
                 "photoPost": creativeConsts.photo
-            }, function (postdata) { //write the data about new post in SessionStorage
+            })
+            .done(function (postdata) { //write the data about new post in SessionStorage
                 postFunctions.saveTags(postdata.id, newTags, function (index) {
                     window.location.href = "indexOnePost.html?postId=" + index;
                 });
-            });
+            })
+            .fail(function(error){
+                console.log("Post error", error);
+                alert("Sorry, we couldn't save your post. Try again.");
+            })
         }
     },
 
@@ -107,7 +118,7 @@ window.postFunctions = window.postFunctions || {
                 }
             });
 
-            deleteTags.deleteTags(creativeConsts.findPostId, function () {
+            postFunctions.deleteTags(creativeConsts.findPostId, function () {
                 postFunctions.saveTags(creativeConsts.findPostId, newTags, function (index) {
                     window.location.href = "indexOnePost.html?postId=" + index;
                 });
@@ -123,6 +134,10 @@ window.postFunctions = window.postFunctions || {
             type: "DELETE",
             success: function (result) {
                 window.location.href = "index.html";
+            },
+            error: function(error){
+                alert("We couldn't delete your post.Please,try again!");
+                console.log(error);
             }
         });
     },
@@ -180,7 +195,6 @@ window.postFunctions = window.postFunctions || {
     createNewComment: function createNewComment() {
         var text = $('#textComment').val();
         var userCurrentId = JSON.parse(sessionStorage.getItem('userInfo'));
-        userCurrentId = userCurrentId.id;
 
         var dateComment = new Date();
         dateComment = dateComment.valueOf();
@@ -188,16 +202,28 @@ window.postFunctions = window.postFunctions || {
         if (text == "") {
             alert("Fill in textarea!");
         } else {
-            $.postJson(
-                creativeConsts.baseUrl + "comments", {
-                    "userId": userCurrentId,
+            $.postJson(creativeConsts.baseUrl + "comments",
+                {
+                    "userId": userCurrentId.id,
                     "postId": creativeConsts.findPostId,
                     "Parent": parentCommentId,
                     "text": text,
-                    "dateCommentCreate": dateComment
-                },
-                function (commentNew) {
+                    "dateCreate": dateComment,
+                    "dateUpdate": dateComment,
+                    "editmode": false
+                })
+                .done(function (commentNew) {
                     window.location.reload();
+                    //$('#commentTree').html()
+                })
+                .fail(function(error){
+                    if(JSON.parse(sessionStorage.getItem('userInfo'))==undefined){
+                        alert("Please, login");
+                    }
+                    else{
+                        console.log(error);
+                        alert("Please, try again.");
+                    }
                 }
             );
         }
