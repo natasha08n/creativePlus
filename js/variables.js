@@ -1,6 +1,8 @@
 //depends on function.js
 
 window.creativeConsts = window.creativeConsts || {
+    cypherPass: 'creativePlus',
+    
     baseUrl: "http://localhost:3000/",
 
     findPostId: +creativeFunctions.getParameterByName('postId'),
